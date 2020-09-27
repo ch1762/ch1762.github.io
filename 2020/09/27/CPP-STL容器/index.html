@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, chの1762">
+    <meta name="keywords" content="CPP STL容器, chの1762">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | chの1762</title>
+    <title>CPP STL容器 | chの1762</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/source/images/xxx.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">CPP STL容器</h1>
                 </div>
             </div>
         </div>
@@ -428,12 +428,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/CPP/" class="post-category">
+                                CPP
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -458,20 +475,263 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <p>vector<br>1.vector构造函数</p>
+<pre class="line-numbers language-none"><code class="language-none">vector &lt;T&gt; v;&#x2F;&#x2F;采用模板实现类实现，默认构造函数
+vector (v.begin(),v.end());&#x2F;&#x2F;将v【begin(),end()】区间中的元素拷贝给本身
+vector(n,elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身
+vector（const vector &amp;vec）; &#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.vector 常用赋值操作</p>
+<pre class="line-numbers language-none"><code class="language-none">assign(begin(),end());&#x2F;&#x2F;将【begin(),end()】区间中的元素拷贝给本身
+assign(n,elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身
+vector&amp; operator&#x3D;(const vector &amp;vec);&#x2F;&#x2F;重载等号操作符
+swap(vec);&#x2F;&#x2F;将vec与本身的元素互换
+int arr[]&#x3D;&#123;0,1,2&#125;;
+assign(arr,arr+3);&#x2F;&#x2F;使用数值初始化vector<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3.vector 大小操作</p>
+<pre class="line-numbers language-none"><code class="language-none">size();&#x2F;&#x2F;返回元素容器中元素个数
+empty();&#x2F;&#x2F;判断容器是否为空
+resize(int num ,elem);&#x2F;&#x2F;重新指定容器长度为num，若容器变长，则以elem值填充新位置，未指定elem值则以默认值0填充，若容器变短，则末尾超出容器长度的元素被删除
+capacity();&#x2F;&#x2F;容器的容量
+reserve(int len);&#x2F;&#x2F;容器预留len个元素长度，预留位置不初始化，元素不可访问
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>4.vector 数据存取操作</p>
+<pre class="line-numbers language-none"><code class="language-none">at(int idx);&#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，抛出out_of_range异常
+operator[];&#x2F;&#x2F;返回索引idx所指的数据，越界时，运行直接报错
+front();&#x2F;&#x2F;返回容器中第一个数据元素
+back();&#x2F;&#x2F;返回容器中最后一个数据元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>5.vector插入和删除操作</p>
+<pre class="line-numbers language-none"><code class="language-none">insert(const_iterator pos,int count,ele);&#x2F;&#x2F;迭代器指向位置pos插入count个元素ele
+push_back(ele);&#x2F;&#x2F;尾部插入元素ele
+pop_back();&#x2F;&#x2F;删除最后一个元素
+erase(const_iterator start,const_iterator end);&#x2F;&#x2F;删除迭代器从start到end之间的元素
+erase(const_iterator pos);&#x2F;&#x2F;删除迭代器指向的元素
+clear();&#x2F;&#x2F;删除容器中所有元素 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>string<br>1.string构造函数</p>
+<pre class="line-numbers language-none"><code class="language-none">string();&#x2F;&#x2F;创建一个空的字符串 
+string(const string&amp; str);&#x2F;&#x2F;使用一个string对象初始化另一个string对象
+string(const char* s);&#x2F;&#x2F;使用字符串s初始化
+string(int n,char c);&#x2F;&#x2F;使用n个字符c初始化<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.string基本赋值操作</p>
+<pre class="line-numbers language-none"><code class="language-none">string&amp; operator&#x3D;(const char* s);&#x2F;&#x2F;char*类型字符串 赋值给当前的字符串
+string&amp; operator&#x3D;(const string &amp;s);&#x2F;&#x2F;把字符串s赋值给当前的字符串
+string&amp; operator&#x3D;(char c);&#x2F;&#x2F;字符赋值给当前的字符串
+string&amp; assign(const char* s);&#x2F;&#x2F;把字符串s赋值给当前的字符串
+string&amp; assign(const char* s,int n);&#x2F;&#x2F;把字符串s的前n个字符赋值给当前的字符串
+string&amp; assign(const string &amp;s);&#x2F;&#x2F;把字符串s赋值给当前的字符串
+string&amp; assign(int n,char c);&#x2F;&#x2F;用n个字符c赋值给当前字符串
+string&amp; assign(const string &amp;s,int start,int n);&#x2F;&#x2F;将s从start开始n个字符赋值给字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.string存取字符操作</p>
+<pre class="line-numbers language-none"><code class="language-none">char&amp; operator[](int n);&#x2F;&#x2F;通过【】方式取字符
+char&amp; at(int n);&#x2F;&#x2F;通过at方法获取字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>4.string拼接操作</p>
+<pre class="line-numbers language-none"><code class="language-none">string&amp; operator+&#x3D;(const string&amp; str);&#x2F;&#x2F;重载+&#x3D;运算符
+string&amp; operator+&#x3D;(const char* str);&#x2F;&#x2F;重载+&#x3D;运算符
+string&amp; operator+&#x3D;(const char c);&#x2F;&#x2F;重载+&#x3D;运算符
+string&amp; append(const char *s);&#x2F;&#x2F;把字符串s连接到当前字符串结尾
+string&amp; append(const char *s,int n);&#x2F;&#x2F;把字符串s的前n个字符连接到当前字符串结尾
+string&amp; append(const string &amp;s);&#x2F;&#x2F;同operator+&#x3D;（）
+string&amp; append(const string &amp;s,int pos,int n);&#x2F;&#x2F;把字符串s中从pos开始的n个字符连接到当前字符串结尾
+string&amp; append( int n,char c);&#x2F;&#x2F;在当前字符串结尾添加n个字符c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.string查找和替换</p>
+<pre class="line-numbers language-none"><code class="language-none">int find(const string&amp; str,int pos &#x3D; 0)const;&#x2F;&#x2F;查找str第一次出现的位置，从pos开始查找
+int find(const char* s,int pos &#x3D; 0)const;&#x2F;&#x2F;查找s第一次出现位置，从pos开始查找
+int find(const char *s,int pos,int n)const;&#x2F;&#x2F;从pos位置查找s的前n个字符第一次位置
+int find(const char c,int pos &#x3D; 0)const;&#x2F;&#x2F;查找字符c第一次出现位置
+int rfind(const string&amp; str, int pos &#x3D; npos)const;&#x2F;&#x2F;查找str最后一次出现位置，从pos开始查找
+int rfind(const char* s,int pos &#x3D; npos)const;&#x2F;&#x2F;查找s最后一次出现位置，从pos开始查找
+int rfind(const char* s,int pos,int n )const;&#x2F;&#x2F;从pos查找s的前n个字符最后一次位置
+int rfind(const char c,int pos &#x3D; 0)const;&#x2F;&#x2F;查找字符c最后一次出现位置
+string&amp; replace(int pos,int n,const string&amp; str);&#x2F;&#x2F;替换从pos开始的n个字符为字符串str
+string&amp; replace(int pos,int n,const char* s);&#x2F;&#x2F;替换从pos开始的n个字符为字符串s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>6.string 比较操作</p>
+<pre class="line-numbers language-none"><code class="language-none">int compare(const string &amp;s)const;&#x2F;&#x2F;与字符串s比较
+int compare(const char*s)const;&#x2F;&#x2F;与字符串s比较
+&#x2F;&#x2F;compare函数在&gt;时返回1，&lt;时返回-1，相等时返回0，比较区分大小写，逐个字符比较<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>7.string子串</p>
+<pre class="line-numbers language-none"><code class="language-none">string substr(int pos &#x3D; 0,int n &#x3D; npos)const;&#x2F;&#x2F;返回由pos开始的n个字符组成的字符串<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>8.string插入和删除操作</p>
+<pre class="line-numbers language-none"><code class="language-none">string&amp; insert(int pos,const char* s);&#x2F;&#x2F;插入字符串
+string&amp; insert(int pos,const string &amp;str);&#x2F;&#x2F;插入字符串
+string&amp; insert(int pos,int n,char c);&#x2F;&#x2F;在指定位置插入n个字符c
+string&amp; erase(int pos,int n &#x3D; npos);&#x2F;&#x2F;删除从pos开始的n个字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>deque<br>1.deque 构造函数</p>
+<pre class="line-numbers language-none"><code class="language-none">deque&lt;T&gt;deqT;&#x2F;&#x2F;默认构造形式
+deque(begin,end);&#x2F;&#x2F;构造函数将【begin，end】区间的元素拷贝给自身
+deque(n,elem);&#x2F;&#x2F;构造函数将n个elem拷贝给自身
+deque(const deque &amp;deq);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.deque赋值操作</p>
+<pre class="line-numbers language-none"><code class="language-none">assign(begin,end);&#x2F;&#x2F;将【begin，end】区间的数据拷贝赋值给自身
+assign(n,elem);&#x2F;&#x2F;将n个elem拷贝赋值给自身
+deque&amp; operator&#x3D;(const deque &amp;deq);&#x2F;&#x2F;重载等号操作符
+swap(deq);&#x2F;&#x2F;将deq与本身的元素互换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.deque大小操作</p>
+<pre class="line-numbers language-none"><code class="language-none">deque.size();&#x2F;&#x2F;返回容器中元素的个数
+deque.empty();&#x2F;&#x2F;判断容器是否为空
+deque.resize(num,elem);&#x2F;&#x2F;重新指定容器长度为num，若容器变长，则以elem值填充新位置，未指定elem值则以默认值0填充，若容器变短，则末尾超出容器长度的元素被删除<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>4.deque双端插入和删除操作</p>
+<pre class="line-numbers language-none"><code class="language-none">push_back(elem);&#x2F;&#x2F;在容器尾部添加一个数据
+push_front(elem);&#x2F;&#x2F;在容器头部插入一个数据
+pop_back();&#x2F;&#x2F;删除容器最后一个数据
+pop_front();&#x2F;&#x2F;删除容器第一个数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.deque数据存取</p>
+<pre class="line-numbers language-none"><code class="language-none">at(int idx);&#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，抛出out_of_range异常
+operator[];&#x2F;&#x2F;返回索引idx所指的数据，越界时，运行直接报错
+front();&#x2F;&#x2F;返回容器中第一个数据元素
+back();&#x2F;&#x2F;返回容器中最后一个数据元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>6.deque插入操作</p>
+<pre class="line-numbers language-none"><code class="language-none">insert(int pos,elem);&#x2F;&#x2F;在pos位置插入元素elem
+clear();&#x2F;&#x2F;移除容器的所有数据
+erase(begin,end);&#x2F;&#x2F;删除【begin，end】区间的所有元素
+erase(int pos);&#x2F;&#x2F;删除pos位置的数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>queue<br>1.queue构造函数</p>
+<pre class="line-numbers language-none"><code class="language-none">queue&lt;T&gt;queT;&#x2F;&#x2F;queue采用模板类实现，queue对象的默认构造形式
+queue(const queue &amp;que);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>2.queue存取、插入和删除操作</p>
+<pre class="line-numbers language-none"><code class="language-none">push(elem);&#x2F;&#x2F;往队尾添加元素
+pop();&#x2F;&#x2F;从对头移除第一个元素	
+back();&#x2F;&#x2F;返回最后一个元素
+front();&#x2F;&#x2F;返回第一个元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.queue赋值操作</p>
+<pre class="line-numbers language-none"><code class="language-none">queue&amp; operator&#x3D;(const queue &amp;que);&#x2F;&#x2F;重载等号操作符<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>4.queue大小操作</p>
+<pre class="line-numbers language-none"><code class="language-none">empty();&#x2F;&#x2F;判断队列是否为空
+size();&#x2F;&#x2F;返回队列的大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>stack<br>1.stack构造函数</p>
+<pre class="line-numbers language-none"><code class="language-none">stack&lt;T&gt;stkT;&#x2F;&#x2F;采用模板类实现，stack对象的默认构造形式
+stack(const stack &amp;stk);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>2.stack赋值操作</p>
+<pre class="line-numbers language-none"><code class="language-none">stack&amp; operator&#x3D;(const stack &amp;stk);&#x2F;&#x2F;重载等号操作符<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>3.stack数据存取操作</p>
+<pre class="line-numbers language-none"><code class="language-none">push(elem);&#x2F;&#x2F;向栈顶添加元素
+pop();&#x2F;&#x2F;从栈顶移除第一个元素
+top();&#x2F;&#x2F;返回栈顶元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>list<br>1.list构造函数</p>
+<pre class="line-numbers language-none"><code class="language-none">list&lt;T&gt;lstT;&#x2F;&#x2F;list采用模板类实现对象的默认构造函数
+list(begin,end);&#x2F;&#x2F;构造函数将【begin，end】区间中的元素拷贝给自身
+list(int n,elem);&#x2F;&#x2F;拷贝函数将n个elem拷贝给自身
+list(const list &amp;lst);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.list数据元素插入和删除操作</p>
+<pre class="line-numbers language-none"><code class="language-none">push_back(elem);&#x2F;&#x2F;在容器尾部加入一个元素
+pop_back();&#x2F;&#x2F;删除容器中最后一个元素
+push_front(elem);&#x2F;&#x2F;在容器开头插入一个元素
+pop_front();&#x2F;&#x2F;在容器开头移除一个元素
+insert(pos,elem);&#x2F;&#x2F;在pos位置插入elem元素的拷贝，返回新数据的位置
+insert(pos,n,elem);&#x2F;&#x2F;在pos位置插入n个elem元素，无返回值
+insert(pos,begin,end);&#x2F;&#x2F;在pos位置插入【begin，end】区间的数据，无返回值
+clear();&#x2F;&#x2F;移除容器的所有数据
+erase(begin,end);&#x2F;&#x2F;删除【begin，end】区间的数据，返回值下一个数据的位置
+erase(pos);&#x2F;&#x2F;删除pos位置的数据，返回下一个数据的位置
+remove(elem);&#x2F;&#x2F;删除容器中所有与elem匹配的元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.list大小操作</p>
+<pre class="line-numbers language-none"><code class="language-none">size();&#x2F;&#x2F;返回元素容器中元素个数
+empty();&#x2F;&#x2F;判断容器是否为空
+resize(int num ,elem);&#x2F;&#x2F;重新指定容器长度为num，若容器变长，则以elem值填充新位置，未指定elem值则以默认值0填充，若容器变短，则末尾超出容器长度的元素被删除<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>4.list赋值操作</p>
+<pre class="line-numbers language-none"><code class="language-none">assign(begin,end);&#x2F;&#x2F;将【begin，end】区间的数据拷贝给自身
+assign(n,elem);&#x2F;&#x2F;将n个elem拷贝赋值给自身
+list&amp; operator&#x3D;(const list &amp;lst);&#x2F;&#x2F;重载等号操作符
+swap(lst);&#x2F;&#x2F;将list与本身的元素互换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.list数据的存取</p>
+<pre class="line-numbers language-none"><code class="language-none">front();&#x2F;&#x2F;返回第一个元素
+back();&#x2F;&#x2F;返回最后一个元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>6.list反转排列排序</p>
+<pre class="line-numbers language-none"><code class="language-none">reverse();&#x2F;&#x2F;反转链表
+sort();&#x2F;&#x2F;list排序<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>set/multiset<br>1.set构造函数</p>
+<pre class="line-numbers language-none"><code class="language-none">set&lt;T&gt;sT;&#x2F;&#x2F;set默认构造函数
+multiset&lt;T&gt;msT;&#x2F;&#x2F;multiset默认构造函数
+set(const set &amp;st);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>2.set赋值操作</p>
+<pre class="line-numbers language-none"><code class="language-none">set&amp; operator&#x3D;(const set &amp;sT);&#x2F;&#x2F;重载等号操作
+swap(sT);&#x2F;&#x2F;交换两个集合容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>3.set大小操作</p>
+<pre class="line-numbers language-none"><code class="language-none">size();&#x2F;&#x2F;返回容器中元素的数目
+empty();&#x2F;&#x2F;判断容器是否为空<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>4.set插入和删除操作</p>
+<pre class="line-numbers language-none"><code class="language-none">insert(elem);&#x2F;&#x2F;在容器中插入元素
+clear();&#x2F;&#x2F;清除所有元素
+erase(pos);&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器
+erase(begin,end);&#x2F;&#x2F;删除区间【begin，end】的所有元素，返回下一个元素的迭代器
+erase(elem);&#x2F;&#x2F;删除容器中值为elem的元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.set查找操作</p>
+<pre class="line-numbers language-none"><code class="language-none">find(key);&#x2F;&#x2F;查找键key是否存在，若存在，返回该键的元素的迭代器；若不存在，返回map.end（）；
+lower_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;&#x3D;keyElem元素的迭代器
+upper_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;keyElem元素的迭代器
+equal_range(keyElem);&#x2F;&#x2F;返回容器中key与keyElem相等的上下限的两个迭代器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>map/multimap<br>1.map构造函数</p>
+<pre class="line-numbers language-none"><code class="language-none">map&lt;t1,T2&gt;mapT;&#x2F;&#x2F;map默认构造函数
+map(const map &amp;mp);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>2.map赋值操作</p>
+<pre class="line-numbers language-none"><code class="language-none">map&amp; operator&#x3D;(const map &amp;mp);&#x2F;&#x2F;重载等号操作符
+swap(mp);&#x2F;&#x2F;交换两个集合容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>3.map大小操作</p>
+<pre class="line-numbers language-none"><code class="language-none">size();&#x2F;&#x2F;返回元素中元素的数目
+empty();&#x2F;&#x2F;判断容器是否为空<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>4.map插入数据元素操作</p>
+<pre class="line-numbers language-none"><code class="language-none">map.insert(...);&#x2F;&#x2F;往容器插入元素，返回pair&lt;iterator,bool&gt;
+map&lt;int,string&gt;mapStu;
+&#x2F;&#x2F;第一种，通过pair的方式插入对象
+mapStu.insert(pair&lt;int,string&gt;(22,&quot;小恒&quot;))；
+&#x2F;&#x2F;第二种，通过pair的方式插入对象
+mapStu.insert(make_pair(22,&quot;小恒&quot;))；
+&#x2F;&#x2F;第三种，通过value_type的方式插入对象
+mapStu.insert(map&lt;int,string&gt;::value_type(22,&quot;小恒&quot;));
+&#x2F;&#x2F;第四种，通过数组的方式插入值
+mapStu[2] &#x3D; &quot;小萌&quot;；
+mapStu[3] &#x3D; &quot;小印&quot;；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.map删除操作</p>
+<pre class="line-numbers language-none"><code class="language-none">clear();&#x2F;&#x2F;删除所有元素
+erase(pos);&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器
+erase(begin,end);&#x2F;&#x2F;删除区间【begin，end】的所有元素，返回下一个元素的迭代器
+erase(keyElem);&#x2F;&#x2F;删除容器中key为keyElem的对组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>6.map查找操作</p>
+<pre class="line-numbers language-none"><code class="language-none">find(key);&#x2F;&#x2F;查找键key是否存在，若存在，返回该键的元素的迭代器；若不存在，返回map.end（）；
+count(keyElem);&#x2F;&#x2F;返回容器中key为keyElem的对组个数，对map来说，值可能为0或1，对于multimap来说，值可能大于1
+lower_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;&#x3D;keyElem元素的迭代器
+upper_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;keyElem元素的迭代器
+equal_range(keyElem);&#x2F;&#x2F;返回容器中key与keyElem相等的上下限的两个迭代器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
             </div>
             <hr/>
 
@@ -496,7 +756,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ch1762.top/2020/09/27/hello-world/">https://ch1762.top/2020/09/27/hello-world/</a>
+                    <a href="https://ch1762.top/2020/09/27/CPP-STL%E5%AE%B9%E5%99%A8/">https://ch1762.top/2020/09/27/CPP-STL%E5%AE%B9%E5%99%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -533,7 +793,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
+                                </a>
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -702,7 +970,7 @@
         repo: 'ch1762.github.io',
         owner: 'ch1762',
         admin: ["ch1762"],
-        id: '2020-09-27T11-42-17',
+        id: '2020-09-27T15-00-24',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -726,39 +994,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/27/hello-world/">
+                <a href="/2020/09/27/CPP-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                     <div class="card-image">
                         
+                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="CPP 数据结构">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">CPP 数据结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            数据结构
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            ch1762
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -769,19 +1050,18 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/27/hello-world/">
+                <a href="/2020/09/27/CPP-STL%E5%AE%B9%E5%99%A8/">
                     <div class="card-image">
                         
+                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="CPP STL容器">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">CPP STL容器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            CPP STL容器
                         
                     </div>
                     <div class="publish-info">
@@ -790,13 +1070,29 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            ch1762
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CPP/" class="post-category">
+                                    CPP
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

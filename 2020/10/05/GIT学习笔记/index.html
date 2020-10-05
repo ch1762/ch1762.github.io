@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CPP 排序算法, chの1762">
+    <meta name="keywords" content="GIT学习笔记, chの1762">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CPP 排序算法 | chの1762</title>
+    <title>GIT学习笔记 | chの1762</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CPP 排序算法</h1>
+                    <h1 class="description center-align post-title">GIT学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -446,8 +446,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-category">
-                                排序算法
+                            <a href="/categories/GIT/" class="post-category">
+                                GIT
                             </a>
                         
                     </div>
@@ -459,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-27
+                    2020-10-05
                 </div>
                 
 
@@ -475,42 +475,144 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>01 插入排序<br><img src="https://img-blog.csdnimg.cn/20190221172717209.png"><br>每次选择一个元素，并且将这个元素和整个数组中的所有元素进行比较，然后插入到合适的位置，图片演示如上，时间复杂度 O(n^2)<br><img src="https://img-blog.csdnimg.cn/20190221171843351.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">02 希尔排序（Shell Sort）</p>
-<p>这个是插入排序的修改版，根据步长由长到短分组，进行排序，直到步长为1为止，属于插入排序的一种。</p>
-<p>代码实现如下：<br><img src="https://img-blog.csdnimg.cn/20190221171915694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">03 基数排序（Radix Sort）</p>
-<p>基数排序是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。排序过程是将所有待比较数值统一为同样的数位长度，数位较短的数前面补零，然后从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。</p>
-<p>排序代码实现如下：<br>    <img src="https://img-blog.csdnimg.cn/2019022117194025.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">04 冒泡排序<br><img src="https://img-blog.csdnimg.cn/20190221172701896.png"><br>每次选择两个元素，按照需求进行交换（比如需要升序排列的话，把较大的元素放在靠后一些的位置），循环 n 次（n 为总元素个数），这样小的元素会不断 “冒泡” 到前面来，时间复杂度O(n^2)，C++ 代码如下：<br><img src="https://img-blog.csdnimg.cn/20190221172101861.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">以上是两个比较容易/简单的排序方式了，一般来说是最容易想到的，当然也是速度最慢的两个（因为时间复杂度很高），如果平时自己用用肯定没有问题，但是如果需要吹牛的话，可能这样就不很妥当了，下面介绍一些更加有意思的排序算法。</p>
-<p>05 归并排序（Merge Sort）</p>
-<p>归并排序相比较之前的排序算法而言加入了分治法的思想，其算法思路如下：<img src="https://img-blog.csdnimg.cn/20190221172649646.png"><br>1.如果给的数组只有一个元素的话，直接返回（也就是递归到最底层的一个情况）</p>
-<p>2.把整个数组分为尽可能相等的两个部分（分）</p>
-<p>3.对于两个被分开的两个部分进行整个归并排序（治）</p>
-<p>4.把两个被分开且排好序的数组拼接在一起<br><img src="https://img-blog.csdnimg.cn/20190221172618549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">代码演示如下：<br><img src="https://img-blog.csdnimg.cn/20190221172210881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">06 堆排序（Heap Sort）</p>
-<p>堆排序是一种基于二叉堆（Binary Heap）结构的排序算法，所谓二叉堆，我们通过完全二叉树来对比，只不过相比较完全二叉树而言，二叉堆的所有父节点的值都大于（或者小于）它的孩子节点，像这样：<img src="https://img-blog.csdnimg.cn/20190221172238980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">首先需要引入最大堆的定义：</p>
-<pre><code>最大堆中的最大元素值出现在根结点（堆顶）
+                <h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><ul>
+<li>集中式版本控制</li>
+</ul>
+<p>集中式版本控制系统的版本库是集中存放在中央服务器的,工作时需要首先从中央服务器取得最新的版本,必须联网才能工作.</p>
+<ul>
+<li>分布式版本控制</li>
+</ul>
+<p>分布式版本控制系统没有中央服务器,版本库在每个人的电脑上,不需要联网就能工作.分布式版本控制系统通常有一台充当“中央服务器”的电脑，但这个服务器的作用仅仅是用来方便“交换”用户的修改，没有这个服务器也一样可以工作，只是交换修改不方便。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre class="line-numbers language-git" data-language="git"><code class="language-git">git init   初始化文件夹,将其变成Git可以管理的仓库
 
-堆中每个父节点的元素值都大于等于其孩子结点</code></pre>
-<p>建立堆函数：<br><img src="https://img-blog.csdnimg.cn/20190221172303527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">堆排序的方法如下，把最大堆堆顶的最大数取出，将剩余的堆继续调整为最大堆，再次将堆顶的最大数取出，这个过程持续到剩余数只有一个时结束。</p>
-<p>堆排序函数：<br><img src="https://img-blog.csdnimg.cn/20190221172323117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">07 桶排序（Bucket Sort）</p>
-<p>桶排序**的原理是将数组分到有限数量的桶中，再对每个桶子再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序），最后将各个桶中的数据有序的合并起来。</p>
-<p>排序过程：</p>
-<pre><code>假设待排序的一组数统一的分布在一个范围中，并将这一范围划分成几个子范围，也就是桶
+git add &lt;file&gt;   将文件添加到暂存区
 
-将待排序的一组数，分档规入这些子桶，并将桶中的数据进行排序
+git commit -m &quot;注释&quot;    将暂存区的文件提交到分支并添加注释
 
-将各个桶中的数据有序的合并起来</code></pre>
-<p>代码实现：<img src="https://img-blog.csdnimg.cn/20190221172341228.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">08 快速排序（Quick Sort）</p>
-<p>简称快排，时间复杂度并不固定，如果在最坏情况下（元素刚好是反向的）速度比较慢，达到 O(n^2)（和选择排序一个效率），但是如果在比较理想的情况下时间复杂度 O(nlogn)。</p>
-<p>快排也是一个分治的算法，快排算法每次选择一个元素并且将整个数组以那个元素分为两部分，根据实现算法的不同，元素的选择一般有如下几种：</p>
-<pre><code>永远选择第一个元素
+git log    显示从最近到最远的提交日志
 
-永远选择最后一个元素
+git status    查看当前状态
 
-随机选择元素
+git switch 分支名  切换分支
 
-取中间值</code></pre>
-<p>整个快速排序的核心是分区（partition），分区的目的是传入一个数组和选定的一个元素，把所有小于那个元素的其他元素放在左边，大于的放在右边。<br><img src="https://img-blog.csdnimg.cn/20190221172408593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">算法导论中给出的分区算法伪代码如下：<br><img src="https://img-blog.csdnimg.cn/20190221172424869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">其思路是每次从最左元素中选择一个元素并且将小于等于那个元素的元素的下标标记为 i ，在整个遍历过程中，如果我们找到一个更加小的元素，我们就把这</p>
-<p>个元素和数组中第 i 个元素交换，一个例子如下（摘自 GeeksForGeeks）：<img src="https://img-blog.csdnimg.cn/20190221172444968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70">09 Bogo 排序</p>
-<p>在计算机科学中，Bogo 排序（bogo-sort）是个既不实用又原始的排序演算法，其原理等同将一堆卡片抛起，落在桌上后检查卡片是否已整齐排列好，若非就再抛一次。其名字源自 Quantum bogodynamics，又称 bozo soart 、blort sort 或猴子排序（参见无限猴子定理）。<br>C 代码实现：<br><img src="https://img-blog.csdnimg.cn/20190221172526209.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70"></p>
+git branch (参数)   查看本地分支(加参数可以对分支作其他操作)
+
+git merge 分支名   合并分支到master分支
+
+git push origin 分支名  推送本地分支到远程仓库
+
+git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;  从远程获取代码并合并本地的版本,如果远程分支是与本地当前分支合并，则冒号后面的部分可以省略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在Git中，用<code>HEAD</code>表示当前版本,<code>HEAD^</code>表示上一个版本,<code>HEAD^^</code>表示上上个版本,<code>HEAD~100</code>表示前100个版本.</p>
+<p>在Git中, commit ID表示版本号,是一个SHA1计算出来的一个非常大的数字，用十六进制表示.每个用户的commit ID都不相同,以自身的为准.每提交一个新版本，实际上Git就会把它们自动串成一条时间线。</p>
+<p>版本回滚</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git reset --hard HEAD^  回滚到上一个版本<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>版本回滚后再返回较新的版本</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git reset --hard commit ID(版本号)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>版本号没必要写全，保证唯一即可,Git会自动寻找符合的版本号。</p>
+<p>Git的版本回退速度非常快，因为Git在内部有个指向当前版本的<code>HEAD</code>指针.当你回退版本的时候，仅仅更改<code>HEAD</code>指针指向的版本号,再将工作区的文件更新.</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git reflog      记录每次操作的命令以及对应的commit ID<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><p><code>git init</code>初始化的文件是git的版本库,Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支<code>master</code>，以及指向<code>master</code>的一个指针叫<code>HEAD</code>。</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919020037470528/0" alt="git-repo"></p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git diff  对比工作区(git add之前)和暂存区(git add之后)的区别
+git diff --cached  对比暂存区(git add之后)和版本库(git commit之后)的区别
+git diff HEAD  对比工作区(git add之前)和版本库(git commit之后)的区别<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>Git跟踪并管理的是修改，而非文件。</p>
+<p><code>git checkout -- file</code>可以丢弃工作区的修改,将这个文件回到最近一次<code>git commit</code>或<code>git add</code>时的状态。</p>
+<p><code>git checkout</code>切换到另一个分支</p>
+<p>命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失<strong>最近一次提交后你修改的内容</strong>。从来没有被添加到版本库就被删除的文件，是无法恢复的！</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>把一个已有的本地仓库GitHub仓库关联，然后将本地仓库的内容推送到GitHub仓库。</p>
+<p>在本地仓库下运行命令：</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git remote add origin git@github.com:github仓库地址(.git)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>添加后，远程库的名字就是<code>origin</code>，这是Git默认的叫法，也可以改成别的。把本地库的内容推送到远程，用<code>git push</code>命令，实际上是把当前分支<code>master</code>推送到远程。</p>
+<p>如果远程库为空，第一次推送<code>master</code>分支时，可以加上<code>-u</code>参数，Git不但会把本地<code>master</code>分支的内容推送到远程新的<code>master</code>分支，还会把本地<code>master</code>分支和远程<code>master</code>分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">$ git clone git@github.com:github仓库地址(.git)  克隆仓库到本地<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>Git clone</code>支持多种协议，默认的<code>git://</code>使用ssh，但也可以使用<code>https</code>等其他协议。使用<code>https</code>除了速度慢以外，还有个最大的缺点是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用<code>ssh</code>协议而只能用<code>https</code>。</p>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p>每次提交内容时，Git会将它们串成一条时间线，这条时间线就是一个分支。如果只有一条时间线，在Git里，这个分支叫主分支，即<code>master</code>分支。<code>HEAD</code>严格来说不是指向提交，而是指向<code>master</code>，<code>master</code>才是指向提交的，所以，<code>HEAD</code>指向的就是当前分支。</p>
+<p>初始状态时，<code>master</code>分支是一条线，Git用<code>master</code>指向最新的提交，再用<code>HEAD</code>指向<code>master</code>，就能确定当前分支，以及当前分支的提交点：</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919022325462368/0" alt="git-br-initial"></p>
+<p>每次提交，<code>master</code>分支都会向前移动一步，随着不断提交，<code>master</code>分支的线也越来越长。</p>
+<p>当创建新的分支，例如<code>dev</code>时，Git新建了一个指针叫<code>dev</code>，指向<code>master</code>相同的提交，再把<code>HEAD</code>指向<code>dev</code>，就表示当前分支在<code>dev</code>上：</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919022363210080/l" alt="git-br-create"></p>
+<p>Git创建一个分支很快，因为除了增加一个<code>dev</code>指针，修改<code>HEAD</code>指针的指向，工作区的文件没有任何变化.</p>
+<p>但从现在开始，对工作区的修改和提交就是针对<code>dev</code>分支了，比如新提交一次后，<code>dev</code>指针往前移动一步，而<code>master</code>指针不变：</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919022387118368/l" alt="git-br-dev-fd"></p>
+<p>假如在<code>dev</code>上的工作完成了，就可以把<code>dev</code>合并到<code>master</code>上。</p>
+<p>git合并的方法就是直接把<code>master</code>指向<code>dev</code>的当前提交，就完成了合并：</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919022412005504/0" alt="git-br-ff-merge"></p>
+<p>因此Git合并分支也很快,仅仅更改指针的指向，工作区的内容不变.</p>
+<p>合并完分支后，甚至可以删除<code>dev</code>分支。删除<code>dev</code>分支就是把<code>dev</code>指针给删掉，删掉后就只剩下了一条<code>master</code>分支：</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919022479428512/0" alt="git-br-rm"></p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git switch -c 分支名     创建新分支并切换<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>不同分支对同一个文件进行修改提交后,若要进行合并则会发生冲突,此时Git无法自动合并分支,必须要手动解决冲突。解决冲突后，再提交，合并完成。手动解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</p>
+<p>用<code>git log --graph</code>命令可以看到分支合并图。</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919023000423040/0" alt="git-br-feature1"></p>
+<p>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容.</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919023031831104/0" alt="git-br-conflict-merged"></p>
+<p>通常，合并分支时，如果可能，Git会用<code>Fast forward</code>模式，但这种模式下，删除分支后，会丢掉分支信息。</p>
+<p>如果要强制禁用<code>Fast forward</code>模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。</p>
+<p>在合并分支时，加上<code>--no-ff</code>参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并操作.</p>
+<p>在实际开发中，应该按照几个基本原则进行分支管理：</p>
+<p>首先，<code>master</code>分支应该是非常稳定的，仅用来发布稳定的新版本，平时不直接在上面进行操作；</p>
+<p>开发者进行开发都在<code>dev</code>分支上，当发布稳定版本的时候，再把<code>dev</code>分支合并到<code>master</code>上，在<code>master</code>分支上发布版本；</p>
+<p>开发者在<code>dev</code>分支上工作时，每个人都有自己的分支，合并时与<code>dev</code>分支合并。</p>
+<p>所以，团队合作的分支看起来就像这样：<img src="https://www.liaoxuefeng.com/files/attachments/919023260793600/0" alt="git-br-policy"></p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git stash save &quot;save message&quot;  : 执行存储时，添加备注，方便查找，只有git stash 也要可以的，但查找时不方便识别。
+
+git stash list  ：查看stash了哪些存储
+
+git stash show ：显示做了哪些改动，默认show第一个存储,如果要显示其他存贮，后面加stash@&#123;$num&#125;，比如第二个 git stash show stash@&#123;1&#125;
+
+git stash show -p : 显示第一个存储的改动，如果想显示其他存存储，命令：git stash show  stash@&#123;$num&#125;  -p ，比如第二个：git stash show  stash@&#123;1&#125;  -p
+
+git stash apply :应用某个存储,但不会把存储从存储列表中删除，默认使用第一个存储,即stash@&#123;0&#125;，如果要使用其他个，git stash apply stash@&#123;$num&#125; ， 比如第二个：git stash apply stash@&#123;1&#125; 
+
+git stash pop ：命令恢复之前缓存的工作目录，将缓存堆栈中的对应stash删除，并将对应修改应用到当前的工作目录下,默认为第一个stash,即stash@&#123;0&#125;，如果要应用并删除其他stash，命令：git stash pop stash@&#123;$num&#125; ，比如应用并删除第二个：git stash pop stash@&#123;1&#125;
+
+git stash drop stash@&#123;$num&#125; ：丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储
+
+git stash clear ：删除所有缓存的stash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>新增的文件，直接执行stash是不会被存储的</strong></p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git cherry-pick &lt;commit&gt;   将指定的提交（commit）应用于当前分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>commit参数，不一定是提交的哈希值，分支名也是可以的，表示转移该分支的最新提交。</p>
+<h2 id="变基"><a href="#变基" class="headerlink" title="变基"></a>变基</h2><p>适用情况:</p>
+<ol>
+<li>有时对于一个简单的需求提交了多次，这样非常不利于code review，所以需要将多次提交合并成一次提交。（即多次commit合并成一次commit）</li>
+<li>当从master创建一个分支开发，然后其他开发者又从master创建新的分支开发并且先提交，导致远程的master分支比本地master分支有很多不同，因此现在要将本地分支代码基于最新的远程master分支来实现提交</li>
+</ol>
+<p><strong>重点:如果提交存在于你的仓库之外，而别人可能基于这些提交进行开发，那么不要执行变基。</strong></p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git rebase -i   将本地的多次提交合并为一个，以简化提交历史。本地有多个提交时,如果不进行这一步,在git rebase master时会多次解决冲突(最坏情况下,每一个提交都会相应解决一个冲突)
+
+git rebase master   将master最新的分支同步到本地，这个过程可能需要手动解决冲突(如果进行了上一步的话,只用解决一次冲突)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签时刻的历史版本取出来。所以，标签也是版本库的一个快照。</p>
+<p>Git的标签虽然是版本库的快照，但其实就是指向某个commit的指针（分支可以移动，标签不能移动），所以，创建和删除标签都是瞬间完成的。</p>
+<p>标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。</p>
+<ul>
+<li><p><code>git tag &lt;tagname&gt;</code>用于新建一个标签，默认为<code>HEAD</code>，也可以指定一个commit id；</p>
+</li>
+<li><p><code>git tag -a &lt;tagname&gt; -m &quot;标签说明&quot;</code>可以指定标签信息；</p>
+</li>
+<li><p><code>git tag</code>可以查看所有标签。</p>
+</li>
+<li><p><code>git push origin &lt;tagname&gt;</code>可以推送一个本地标签；</p>
+</li>
+<li><p><code>git push origin --tags</code>可以推送全部未推送过的本地标签；</p>
+</li>
+<li><p><code>git tag -d &lt;tagname&gt;</code>可以删除一个本地标签；</p>
+</li>
+<li><p><code>git push origin :refs/tags/&lt;tagname&gt;</code>可以删除一个远程标签。</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -536,7 +638,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ch1762.top/2020/09/27/CPP-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">https://ch1762.top/2020/09/27/CPP-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</a>
+                    <a href="https://ch1762.top/2020/10/05/GIT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://ch1762.top/2020/10/05/GIT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -750,7 +852,7 @@
         repo: 'ch1762.github.io',
         owner: 'ch1762',
         admin: ["ch1762"],
-        id: '2020-09-27T15-52-02',
+        id: '2020-10-05T13-22-56',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -778,19 +880,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/05/GIT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2020/10/05/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="GIT学习笔记">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="linux学习笔记">
                         
-                        <span class="card-title">GIT学习笔记</span>
+                        <span class="card-title">linux学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            GIT学习笔记
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -799,12 +901,8 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/GIT/" class="post-category">
-                                    GIT
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            ch1762
                             
                         </span>
                     </div>
@@ -831,19 +929,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/27/python%E7%96%AB%E6%83%85%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E4%B8%8E%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B1%95%E7%A4%BA/">
+                <a href="/2020/09/27/CPP-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python疫情数据爬取与可视化展示">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="CPP 排序算法">
                         
-                        <span class="card-title">python疫情数据爬取与可视化展示</span>
+                        <span class="card-title">CPP 排序算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python疫情数据爬取与可视化展示
+                            CPP手撕九大排序算法
                         
                     </div>
                     <div class="publish-info">
@@ -854,8 +952,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                    python项目
+                            <a href="/categories/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-category">
+                                    排序算法
                                 </a>
                             
                             

@@ -518,7 +518,7 @@
 <td align="left">类</td>
 </tr>
 </tbody></table>
-<p><img src="https://www.ch1762.com/wp-content/uploads/2016/04/576507-docker1.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2016/04/576507-docker1.png" alt="img"></p>
 <table>
 <thead>
 <tr>
@@ -660,16 +660,16 @@ CONTAINER ID        IMAGE                  COMMAND              ...
 <h4 id="启动已停止运行的容器"><a href="#启动已停止运行的容器" class="headerlink" title="启动已停止运行的容器"></a>启动已停止运行的容器</h4><p>查看所有的容器命令如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">$ docker ps -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://www.ch1762.com/wp-content/uploads/2016/05/docker-container-psa.png"><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-container-psa.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2016/05/docker-container-psa.png"><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-container-psa.png" alt="img"></a></p>
 <p>使用 docker start 启动一个已停止的容器：</p>
 <pre class="line-numbers language-none"><code class="language-none">$ docker start b750bbbcfd88 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://www.ch1762.com/wp-content/uploads/2016/05/docker-container-start.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-container-start.png" alt="img"></p>
 <h4 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h4><p>在大部分的场景下， docker 的服务是在后台运行的，可以过 <strong>-d</strong> 指定容器的运行模式。</p>
 <pre class="line-numbers language-none"><code class="language-none">$ docker run -itd --name ubuntu-test ubuntu &#x2F;bin&#x2F;bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://www.ch1762.com/wp-content/uploads/2016/05/docker-run-d.png"><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-run-d.png" alt="img"></a></p>
-<p><a target="_blank" rel="noopener" href="https://www.ch1762.com/wp-content/uploads/2016/05/docker-run-d2.png"><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-run-d2.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2016/05/docker-run-d.png"><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-run-d.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2016/05/docker-run-d2.png"><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-run-d2.png" alt="img"></a></p>
 <p><strong>注：</strong>加了 <strong>-d</strong> 参数默认不会进入容器，想要进入容器需要使用指令 <strong>docker exec</strong>（下面会介绍到）。</p>
 <h4 id="停止一个容器"><a href="#停止一个容器" class="headerlink" title="停止一个容器"></a>停止一个容器</h4><p>停止容器的命令如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">$ docker stop &lt;容器 ID&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -738,7 +738,7 @@ d3d5e39ed9d3        training&#x2F;webapp     &quot;python app.py&quot;     ...  
 
 <p>Docker 开放了 5000 端口（默认 Python Flask 端口）映射到主机端口 32769 上。</p>
 <p>这时可以通过浏览器访问WEB应用</p>
-<p><img src="https://www.ch1762.com/wp-content/uploads/2016/05/docker31.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker31.png" alt="img"></p>
 <p>也可以通过 -p 参数来设置不一样的端口：</p>
 <pre class="line-numbers language-none"><code class="language-none">ch1762@ch1762:~$ docker run -d -p 5000:5000 training&#x2F;webapp python app.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -905,7 +905,7 @@ be44112b72c7: Waiting<span aria-hidden="true" class="line-numbers-rows"><span></
 <h3 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h3><p>镜像删除使用 <strong>docker rmi</strong> 命令</p>
 <pre class="line-numbers language-none"><code class="language-none">$ docker rmi hello-world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://www.ch1762.com/wp-content/uploads/2016/05/docker-rmi-image.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-rmi-image.png" alt="img"></p>
 <hr>
 <h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><p>当从 docker 镜像仓库中下载的镜像不能满足需求时，可以通过以下两种方式对镜像进行更改。</p>
 <ul>
@@ -1090,7 +1090,7 @@ CONTAINER ID     IMAGE            COMMAND           ...    PORTS                
 <h4 id="新建网络"><a href="#新建网络" class="headerlink" title="新建网络"></a>新建网络</h4><p>创建一个新的 Docker 网络</p>
 <pre class="line-numbers language-none"><code class="language-none">$ docker network create -d bridge test-net<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://www.ch1762.com/wp-content/uploads/2016/05/docker-net.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2016/05/docker-net.png" alt="img"></p>
 <p>参数说明：</p>
 <p><strong>-d</strong>：参数指定 Docker 网络类型，有 bridge、overlay。</p>
 <p>其中 overlay 网络类型用于 Swarm mode</p>
@@ -1144,7 +1144,7 @@ apt install iputils-ping<span aria-hidden="true" class="line-numbers-rows"><span
 <pre class="line-numbers language-none"><code class="language-none">FROM nginx
 RUN echo &#39;这是一个本地构建的nginx镜像&#39; &gt; &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html&#x2F;index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://www.ch1762.com/wp-content/uploads/2019/11/dockerfile1.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/11/dockerfile1.png" alt="img"></p>
 <p><strong>2、FROM 和 RUN 指令的作用</strong></p>
 <p><strong>FROM</strong>：定制的镜像都是基于 FROM 的镜像，这里的 nginx 就是定制需要的基础镜像。后续的操作都是基于 nginx。</p>
 <p><strong>RUN</strong>：用于执行后面跟着的命令行命令。有以下两种格式：</p>
@@ -1172,7 +1172,7 @@ RUN yum install wget \
 <p>以下示例，通过目录下的 Dockerfile 构建一个 nginx:test（镜像名称:镜像标签）。</p>
 <p><strong>注</strong>：最后的 <strong>.</strong> 代表本次执行的上下文路径</p>
 <p>$ docker build -t nginx:test .</p>
-<p><img src="https://www.ch1762.com/wp-content/uploads/2019/11/dockerfile2.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/11/dockerfile2.png" alt="img"></p>
 <p>以上显示，说明已经构建成功。</p>
 <h4 id="上下文路径"><a href="#上下文路径" class="headerlink" title="上下文路径"></a>上下文路径</h4><p>什么是上下文路径</p>
 <p><code>$ docker build -t nginx:test .</code></p>
@@ -1515,7 +1515,7 @@ endpoint_mode: dnsrr
 <li><p><strong>global</strong>：全局服务，服务将部署至集群的每个节点。</p>
 </li>
 <li><p>图解：下图中黄色的方块是 replicated 模式的运行情况，灰色方块是 global 模式的运行情况。</p>
-<p><img src="https://www.ch1762.com/wp-content/uploads/2019/11/docker-composex.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-composex.png" alt="img"></p>
 </li>
 </ul>
 <p><strong>replicas：mode</strong> 为 replicated 时，需要使用此参数配置具体运行的节点数量。</p>
@@ -1746,7 +1746,7 @@ services:
 <p>Docker Machine 也可以集中管理所有的 docker 主机，比如快速的给 100 台服务器安装上 docker。</p>
 <p>Docker Machine 管理的虚拟主机可以是机上的，也可以是云供应商，如阿里云，腾讯云，AWS，或 DigitalOcean。</p>
 <p>使用 docker-machine 命令，可以启动，检查，停止和重新启动托管主机，也可以升级 Docker 客户端和守护程序，以及配置 Docker 客户端与主机进行通信。</p>
-<p><img src="https://www.ch1762.com/wp-content/uploads/2019/11/machine.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/11/machine.png" alt="img"></p>
 <h4 id="列出可用的机器"><a href="#列出可用的机器" class="headerlink" title="列出可用的机器"></a>列出可用的机器</h4><p>可以看到目前只有默认的 default 虚拟机。</p>
 <pre class="line-numbers language-none"><code class="language-none">$ docker-machine ls<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -1760,16 +1760,16 @@ services:
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine2.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine2.png" alt="img"></a></p>
 <h4 id="查看机器的-ip"><a href="#查看机器的-ip" class="headerlink" title="查看机器的 ip"></a>查看机器的 ip</h4><pre class="line-numbers language-none"><code class="language-none">$ docker-machine ip test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://www.ch1762.com/wp-content/uploads/2019/11/docker-machine3.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine3.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine3.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine3.png" alt="img"></a></p>
 <h4 id="停止机器"><a href="#停止机器" class="headerlink" title="停止机器"></a>停止机器</h4><pre class="line-numbers language-none"><code class="language-none">$ docker-machine stop test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://www.ch1762.com/wp-content/uploads/2019/11/docker-machine4.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine4.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine4.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine4.png" alt="img"></a></p>
 <h4 id="启动机器"><a href="#启动机器" class="headerlink" title="启动机器"></a>启动机器</h4><pre class="line-numbers language-none"><code class="language-none">$ docker-machine start test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://www.ch1762.com/wp-content/uploads/2019/11/docker-machine5.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine5.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine5.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine5.png" alt="img"></a></p>
 <h4 id="进入机器"><a href="#进入机器" class="headerlink" title="进入机器"></a>进入机器</h4><pre class="line-numbers language-none"><code class="language-none">$ docker-machine ssh test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://www.ch1762.com/wp-content/uploads/2019/11/docker-machine6.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine6.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine6.png"><img src="https://www.runoob.com/wp-content/uploads/2019/11/docker-machine6.png" alt="img"></a></p>
 <h3 id="docker-machine-命令参数说明"><a href="#docker-machine-命令参数说明" class="headerlink" title="docker-machine 命令参数说明"></a>docker-machine 命令参数说明</h3><ul>
 <li><p><strong>docker-machine active</strong>：查看当前激活状态的 Docker 主机。</p>
 <pre class="line-numbers language-none"><code class="language-none">$ docker-machine ls

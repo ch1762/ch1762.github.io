@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="GIT学习笔记, chの1762">
+    <meta name="keywords" content="python疫情数据爬取与可视化展示, chの1762">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>GIT学习笔记 | chの1762</title>
+    <title>python疫情数据爬取与可视化展示 | chの1762</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">GIT学习笔记</h1>
+                    <h1 class="description center-align post-title">python疫情数据爬取与可视化展示</h1>
                 </div>
             </div>
         </div>
@@ -446,8 +446,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/GIT/" class="post-category">
-                                GIT
+                            <a href="/categories/python%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                python项目
                             </a>
                         
                     </div>
@@ -459,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-05
+                    2020-05-27
                 </div>
                 
 
@@ -475,144 +475,297 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><ul>
-<li>集中式版本控制</li>
-</ul>
-<p>集中式版本控制系统的版本库是集中存放在中央服务器的,工作时需要首先从中央服务器取得最新的版本,必须联网才能工作.</p>
-<ul>
-<li>分布式版本控制</li>
-</ul>
-<p>分布式版本控制系统没有中央服务器,版本库在每个人的电脑上,不需要联网就能工作.分布式版本控制系统通常有一台充当“中央服务器”的电脑，但这个服务器的作用仅仅是用来方便“交换”用户的修改，没有这个服务器也一样可以工作，只是交换修改不方便。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre class="line-numbers language-git" data-language="git"><code class="language-git">git init   初始化文件夹,将其变成Git可以管理的仓库
+                <h1 id="python疫情数据爬取与可视化展示"><a href="#python疫情数据爬取与可视化展示" class="headerlink" title="python疫情数据爬取与可视化展示"></a>python疫情数据爬取与可视化展示</h1><h2 id="爬虫-amp-正则"><a href="#爬虫-amp-正则" class="headerlink" title="爬虫&amp;正则"></a>爬虫&amp;正则</h2><h3 id="requests-amp-Beautiful-Soup"><a href="#requests-amp-Beautiful-Soup" class="headerlink" title="requests&amp;Beautiful Soup"></a>requests&amp;Beautiful Soup</h3><h4 id="requests爬取网页-练手"><a href="#requests爬取网页-练手" class="headerlink" title="requests爬取网页(练手)"></a>requests爬取网页(练手)</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">import requests
 
-git add &lt;file&gt;   将文件添加到暂存区
+url &#x3D; &#39;http:&#x2F;&#x2F;wsjkw.sc.gov.cn&#x2F;scwsjkw&#x2F;gzbd&#x2F;fyzt.shtml&#39;  #爬取网页的ＵＲＬ
+res &#x3D; requests.get(url)          
+&#39;&#39;&#39;
+有些网页采用了一些反爬措施，使用上述代码爬取网页可能会返回403的状态码
+可以通过设置header绕过
+header格式　header &#x3D; &#123;&#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (X11; Linux x86_64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;84.0.4147.125 Safari&#x2F;537.36&#39;&#125;
+此时　res &#x3D; requests.get(url,headers&#x3D;header) 
+&#39;&#39;&#39;
+print(res.encoding)              #查看网页编码格式
+res.encoding &#x3D; &#39;utf-8&#39;           #网页编码格式设置为utf8
+print(res.headers)               #查看网页头信息
+print(res.url)                   #查看网页返回的地址
+print(res.status_code)           #查看网页返回的状态码    
+print(res.text)                  #查看网页内容  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-git commit -m &quot;注释&quot;    将暂存区的文件提交到分支并添加注释
+<p>####Beautiful Soup解析网页数据</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">html &#x3D; res.text
+soup &#x3D; BeautifulSoup(html)                       #使用BeautifulSoup解析网页内容            
+g_url &#x3D; soup.find(&#39;a&#39;).attrs[&#39;href&#39;]             #获取网页中第一个a标签中href属性的值 
+#结果为(&#x2F;scwsjkw&#x2F;gzbd01&#x2F;2020&#x2F;8&#x2F;16&#x2F;2ad3f5e305ee4d1c8bbd56cef4bbaa84.shtml)    
+new_url &#x3D; &#39;http:&#x2F;&#x2F;wsjkw.sc.gov.cn&#x2F;&#39;　+　g_url     #拼接网址，得到需求数据的地址          
+res &#x3D; requests.get(new_url)                             
+res.encoding &#x3D; &#39;utf-8&#39;                                 
+html &#x3D; res.text                                          
+s &#x3D; BeautifulSoup(html)                                   
+s.find_all(&#39;p&#39;)[1]                                #获取网页中所有p标签的值，通过下标取值               <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-git log    显示从最近到最远的提交日志
 
-git status    查看当前状态
+<h3 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h3><h4 id="re"><a href="#re" class="headerlink" title="re"></a>re</h4><p><code>正则表达式速查表:https://www.jb51.net/tools/regexsc.htm</code></p>
+<p>==re.search(regex,str)==       </p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import re
 
-git switch 分支名  切换分支
+html &#x3D; s.find_all(&#39;p&#39;)[1].text                        
+confirm_add_patten &#x3D; &quot;新增(.*?)确诊病例(\d+)&quot;           #设置正则式  ()内的为需要返回的内容，若不加括号则表示即使符合正则也不会返回
+#&quot;新增(.*?)确诊病例(\d+)&quot;       返回 新型冠状病毒肺炎 和 1 
+#&quot;新增.*?确诊病例(\d+)&quot;         返回　1   
+confirm_add &#x3D; re.search(confirm_add_patten,html)      #正则匹配  若匹配不到返回None,匹配到则返回一个元组
+print(confirm_add.groups())                           #显示匹配到的内容     
+print(confirm_add.group(0))                           #显示匹配到的所有文本内容        
+print(confirm_add.group(1))                           #显示匹配到的第一个内容      
+print(confirm_add.group(2))                           #显示匹配到的第二个内容     
+&#39;&#39;&#39;
+新增新型冠状病毒肺炎确诊病例1
+(&#39;新型冠状病毒肺炎&#39;, &#39;1&#39;)
+新型冠状病毒肺炎
+1
+&#39;&#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-git branch (参数)   查看本地分支(加参数可以对分支作其他操作)
+<h2 id="数据搜集"><a href="#数据搜集" class="headerlink" title="数据搜集"></a>数据搜集</h2><h3 id="爬取腾讯数据"><a href="#爬取腾讯数据" class="headerlink" title="爬取腾讯数据"></a>爬取腾讯数据</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">import datetime
+import json
+import requests
+from bs4 import BeautifulSoup
+import time
+### 封装函数 返回各省市疫情情况
+def get_data():
+    today &#x3D; str(datetime.date.today())
+    
+    url &#x3D; &#39;https:&#x2F;&#x2F;view.inews.qq.com&#x2F;g2&#x2F;getOnsInfo?name&#x3D;disease_other&#39;
+    res &#x3D; requests.get(url)
+    d &#x3D; json.loads(res.text)
+    data &#x3D; json.loads(d[&#39;data&#39;])
+    province &#x3D; data[&#39;provinceCompare&#39;]
+    
+    list1 &#x3D; []
+    for pro in province.keys():
+        list1.append(pro)
 
-git merge 分支名   合并分支到master分支
+    nowl &#x3D; []
+    for pro in province.values():
+        nowl.append(pro[&#39;nowConfirm&#39;])
+        
+    addl &#x3D; []
+    for pro in province.values():
+        addl.append(pro[&#39;confirmAdd&#39;])
 
-git push origin 分支名  推送本地分支到远程仓库
+    deadl &#x3D; []
+    for pro in province.values():
+        deadl.append(pro[&#39;dead&#39;])
 
-git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;  从远程获取代码并合并本地的版本,如果远程分支是与本地当前分支合并，则冒号后面的部分可以省略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    heall &#x3D; []
+    for pro in province.values():
+        heall.append(pro[&#39;heal&#39;])
 
-<p>在Git中，用<code>HEAD</code>表示当前版本,<code>HEAD^</code>表示上一个版本,<code>HEAD^^</code>表示上上个版本,<code>HEAD~100</code>表示前100个版本.</p>
-<p>在Git中, commit ID表示版本号,是一个SHA1计算出来的一个非常大的数字，用十六进制表示.每个用户的commit ID都不相同,以自身的为准.每提交一个新版本，实际上Git就会把它们自动串成一条时间线。</p>
-<p>版本回滚</p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git reset --hard HEAD^  回滚到上一个版本<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    zerol &#x3D; []
+    for pro in province.values():
+        zerol.append(pro[&#39;zero&#39;])
 
-<p>版本回滚后再返回较新的版本</p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git reset --hard commit ID(版本号)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    history &#x3D; &#123;&#125;
+    for d in data[&#39;chinaDayList&#39;]:
+        tt &#x3D; &#39;2020.&#39;+d[&#39;date&#39;]
+        temp &#x3D; time.strptime(tt,&#39;%Y.%m.%d&#39;)
+        tm &#x3D; time.strftime(&#39;%Y-%m-%d&#39;,temp)
+        confirm &#x3D; d[&#39;confirm&#39;]#累计确诊
+        dead &#x3D; d[&#39;dead&#39;]#累计死亡
+        heal &#x3D; d[&#39;heal&#39;]#累计治愈
+        suspect &#x3D; d[&#39;suspect&#39;]#累计治愈
+        nowConfirm &#x3D; d[&#39;nowConfirm&#39;]#现存确诊
+        history[tm] &#x3D; &#123;&#39;confirm&#39;:confirm,&#39;suspect&#39;:suspect,&#39;heal&#39;:heal,&#39;dead&#39;:dead,&#39;nowConfirm&#39;:nowConfirm&#125;
+    for d in data[&#39;chinaDayAddList&#39;]:
+        tt &#x3D; &#39;2020.&#39;+d[&#39;date&#39;]
+        temp &#x3D; time.strptime(tt,&#39;%Y.%m.%d&#39;)
+        tm &#x3D; time.strftime(&#39;%Y-%m-%d&#39;,temp)
+        confirm &#x3D; d[&#39;confirm&#39;]#新增确诊
+        suspect &#x3D; d[&#39;suspect&#39;]#新增疑似
+        dead &#x3D; d[&#39;dead&#39;]#新增死亡
+        heal &#x3D; d[&#39;heal&#39;]#新增治愈
+        
+    history[tm].update(&#123;&#39;confirm_add&#39;:confirm,&#39;suspect_add&#39;:suspect,&#39;heal_add&#39;:heal,&#39;dead_add&#39;:dead,&#39;heal_add&#39;:heal&#125;)
+    details &#x3D; []
+    for i in range(34):
+        details.append([today,list1[i],nowl[i],addl[i],heall[i],deadl[i],zerol[i]])
+    return history,details<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>版本号没必要写全，保证唯一即可,Git会自动寻找符合的版本号。</p>
-<p>Git的版本回退速度非常快，因为Git在内部有个指向当前版本的<code>HEAD</code>指针.当你回退版本的时候，仅仅更改<code>HEAD</code>指针指向的版本号,再将工作区的文件更新.</p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git reflog      记录每次操作的命令以及对应的commit ID<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><p><code>git init</code>初始化的文件是git的版本库,Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支<code>master</code>，以及指向<code>master</code>的一个指针叫<code>HEAD</code>。</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919020037470528/0" alt="git-repo"></p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git diff  对比工作区(git add之前)和暂存区(git add之后)的区别
-git diff --cached  对比暂存区(git add之后)和版本库(git commit之后)的区别
-git diff HEAD  对比工作区(git add之前)和版本库(git commit之后)的区别<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>Git跟踪并管理的是修改，而非文件。</p>
-<p><code>git checkout -- file</code>可以丢弃工作区的修改,将这个文件回到最近一次<code>git commit</code>或<code>git add</code>时的状态。</p>
-<p><code>git checkout</code>切换到另一个分支</p>
-<p>命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失<strong>最近一次提交后你修改的内容</strong>。从来没有被添加到版本库就被删除的文件，是无法恢复的！</p>
-<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>把一个已有的本地仓库GitHub仓库关联，然后将本地仓库的内容推送到GitHub仓库。</p>
-<p>在本地仓库下运行命令：</p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git remote add origin git@github.com:github仓库地址(.git)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>###导入数据库</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import traceback
+import pymysql
+import datetime
+import json
+import requests
+from bs4 import BeautifulSoup
+import time
 
-<p>添加后，远程库的名字就是<code>origin</code>，这是Git默认的叫法，也可以改成别的。把本地库的内容推送到远程，用<code>git push</code>命令，实际上是把当前分支<code>master</code>推送到远程。</p>
-<p>如果远程库为空，第一次推送<code>master</code>分支时，可以加上<code>-u</code>参数，Git不但会把本地<code>master</code>分支的内容推送到远程新的<code>master</code>分支，还会把本地<code>master</code>分支和远程<code>master</code>分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">$ git clone git@github.com:github仓库地址(.git)  克隆仓库到本地<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+def get_conn():
+    conn &#x3D; pymysql.connect(host &#x3D; &#39;127.0.0.1&#39;,
+                  user &#x3D; &#39;root&#39;,
+                  password &#x3D;&#39;root&#39;,
+                  db &#x3D; &#39;ch&#39;)
+    cursor &#x3D; conn.cursor()
+    return conn,cursor
+def close_conn(conn,cursor):
+    if cursor:
+        cursor.close()
+    if conn:
+        conn.close()
+        
+def insert_history():
+    &#39;&#39;&#39;
+    插入history表
+    &#39;&#39;&#39;
+    cursor &#x3D; None
+    conn &#x3D; None
+    try:
+        dic &#x3D; get_data()[0]
+        print(f&#39;&#123;datetime.datetime.now()&#125; 开始插入历史数据&#39;)
+        conn,cursor &#x3D; get_conn()
+        sql &#x3D; &#39;insert into history values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)&#39;
+        for k,v in dic.items():
+            cursor.execute(sql,[k,v.get(&#39;confirm&#39;),v.get(&#39;suspect&#39;),v.get(&#39;heal&#39;),
+                                v.get(&#39;dead&#39;),v.get(&#39;nowConfirm&#39;),v.get(&#39;confirm_add&#39;),
+                                v.get(&#39;suspect_add&#39;),v.get(&#39;heal_add&#39;),v.get(&#39;dead_add&#39;)])
+        conn.commit()
+        print(f&#39;&#123;datetime.datetime.now()&#125; 历史数据插入完毕&#39;)
+    except:
+        traceback.print_exc()
+    finally:
+        close_conn(conn,cursor)
+        
+def update_history():
+    &#39;&#39;&#39;
+    更新history表
+    &#39;&#39;&#39;
+    cursor &#x3D; None
+    conn &#x3D; None
+    try:
+        dic &#x3D; get_data()[0]
+        print(f&#39;&#123;datetime.datetime.now()&#125; 开始更新历史数据&#39;)
+        conn,cursor &#x3D; get_conn()
+        sql &#x3D; &#39;insert into history values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)&#39;
+        sql_query &#x3D; &#39;select confirm from history where dt&#x3D;%s&#39;
+        for k,v in dic.items():
+            if not cursor.execute(sql_query,k):
+                cursor.execute(sql,[k,v.get(&#39;confirm&#39;),v.get(&#39;suspect&#39;),v.get(&#39;heal&#39;),
+                                    v.get(&#39;dead&#39;),v.get(&#39;nowConfirm&#39;),v.get(&#39;confirm_add&#39;),
+                                    v.get(&#39;suspect_add&#39;),v.get(&#39;heal_add&#39;),v.get(&#39;dead_add&#39;)])
+        conn.commit()
+        print(f&#39;&#123;datetime.datetime.now()&#125; 历史数据更新完毕&#39;)
+    except:
+        traceback.print_exc()
+    finally:
+        close_conn(conn,cursor)
+        
+def update_details():
+    &#39;&#39;&#39;
+    更新details表
+    &#39;&#39;&#39;
+    cursor &#x3D; None
+    conn &#x3D; None
+    try:
+        li &#x3D; get_data()[1]
+        conn,cursor &#x3D; get_conn()
+        sql &#x3D; &#39;insert into details(update_time,province,now_confirm,confirm_add,heal_add,dead_add,zero_days) values(%s,%s,%s,%s,%s,%s,%s)&#39;
+        sql_query &#x3D; &#39;select %s&#x3D;(select update_time from details order by id desc limit 1)&#39;
+        cursor.execute(sql_query,li[0][0])
+        if not cursor.fetchone()[0]:
+            print(f&#39;&#123;datetime.datetime.now()&#125; 开始更新数据&#39;)
+            for item in li:
+                cursor.execute(sql,item)
+            conn.commit()
+            print(f&#39;&#123;datetime.datetime.now()&#125; 更新最新数据完毕&#39;)
+        else:
+            print(f&#39;&#123;datetime.datetime.now()&#125; 已经是最新数据&#39;)
+    except:
+        traceback.print_exc()
+    finally:
+        close_conn(conn,cursor)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><code>Git clone</code>支持多种协议，默认的<code>git://</code>使用ssh，但也可以使用<code>https</code>等其他协议。使用<code>https</code>除了速度慢以外，还有个最大的缺点是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用<code>ssh</code>协议而只能用<code>https</code>。</p>
-<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p>每次提交内容时，Git会将它们串成一条时间线，这条时间线就是一个分支。如果只有一条时间线，在Git里，这个分支叫主分支，即<code>master</code>分支。<code>HEAD</code>严格来说不是指向提交，而是指向<code>master</code>，<code>master</code>才是指向提交的，所以，<code>HEAD</code>指向的就是当前分支。</p>
-<p>初始状态时，<code>master</code>分支是一条线，Git用<code>master</code>指向最新的提交，再用<code>HEAD</code>指向<code>master</code>，就能确定当前分支，以及当前分支的提交点：</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919022325462368/0" alt="git-br-initial"></p>
-<p>每次提交，<code>master</code>分支都会向前移动一步，随着不断提交，<code>master</code>分支的线也越来越长。</p>
-<p>当创建新的分支，例如<code>dev</code>时，Git新建了一个指针叫<code>dev</code>，指向<code>master</code>相同的提交，再把<code>HEAD</code>指向<code>dev</code>，就表示当前分支在<code>dev</code>上：</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919022363210080/l" alt="git-br-create"></p>
-<p>Git创建一个分支很快，因为除了增加一个<code>dev</code>指针，修改<code>HEAD</code>指针的指向，工作区的文件没有任何变化.</p>
-<p>但从现在开始，对工作区的修改和提交就是针对<code>dev</code>分支了，比如新提交一次后，<code>dev</code>指针往前移动一步，而<code>master</code>指针不变：</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919022387118368/l" alt="git-br-dev-fd"></p>
-<p>假如在<code>dev</code>上的工作完成了，就可以把<code>dev</code>合并到<code>master</code>上。</p>
-<p>git合并的方法就是直接把<code>master</code>指向<code>dev</code>的当前提交，就完成了合并：</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919022412005504/0" alt="git-br-ff-merge"></p>
-<p>因此Git合并分支也很快,仅仅更改指针的指向，工作区的内容不变.</p>
-<p>合并完分支后，甚至可以删除<code>dev</code>分支。删除<code>dev</code>分支就是把<code>dev</code>指针给删掉，删掉后就只剩下了一条<code>master</code>分支：</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919022479428512/0" alt="git-br-rm"></p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git switch -c 分支名     创建新分支并切换<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="爬取新浪热搜数据"><a href="#爬取新浪热搜数据" class="headerlink" title="爬取新浪热搜数据"></a>爬取新浪热搜数据</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">def get_hotsearch():
+    url &#x3D; &#39;https:&#x2F;&#x2F;s.weibo.com&#x2F;top&#x2F;summary?cate&#x3D;realtimehot&#39;
+    res &#x3D; requests.get(url)
+    html &#x3D; res.text
+    r &#x3D; BeautifulSoup(html)
+    s &#x3D; r.find_all(&#39;a&#39;,attrs&#x3D;&#123;&#39;target&#39;:&#39;_blank&#39;&#125;)
+    result &#x3D; []
+    for i in range(1,len(s)-10):
+        pattern &#x3D; &#39;&gt;(.*)&lt;&#x2F;a&gt;&#39;
+        text &#x3D; re.search(pattern,str(s[i]))
+        result.append(text.group(1)+str(50-i))
+    return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>不同分支对同一个文件进行修改提交后,若要进行合并则会发生冲突,此时Git无法自动合并分支,必须要手动解决冲突。解决冲突后，再提交，合并完成。手动解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</p>
-<p>用<code>git log --graph</code>命令可以看到分支合并图。</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919023000423040/0" alt="git-br-feature1"></p>
-<p>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容.</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919023031831104/0" alt="git-br-conflict-merged"></p>
-<p>通常，合并分支时，如果可能，Git会用<code>Fast forward</code>模式，但这种模式下，删除分支后，会丢掉分支信息。</p>
-<p>如果要强制禁用<code>Fast forward</code>模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。</p>
-<p>在合并分支时，加上<code>--no-ff</code>参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并操作.</p>
-<p>在实际开发中，应该按照几个基本原则进行分支管理：</p>
-<p>首先，<code>master</code>分支应该是非常稳定的，仅用来发布稳定的新版本，平时不直接在上面进行操作；</p>
-<p>开发者进行开发都在<code>dev</code>分支上，当发布稳定版本的时候，再把<code>dev</code>分支合并到<code>master</code>上，在<code>master</code>分支上发布版本；</p>
-<p>开发者在<code>dev</code>分支上工作时，每个人都有自己的分支，合并时与<code>dev</code>分支合并。</p>
-<p>所以，团队合作的分支看起来就像这样：<img src="https://www.liaoxuefeng.com/files/attachments/919023260793600/0" alt="git-br-policy"></p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git stash save &quot;save message&quot;  : 执行存储时，添加备注，方便查找，只有git stash 也要可以的，但查找时不方便识别。
+<h3 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">import traceback
+import pymysql
+import datetime
+import json
+import requests
+from bs4 import BeautifulSoup
+import time
 
-git stash list  ：查看stash了哪些存储
+def update_hotsearch():
+    cursor &#x3D; None
+    conn &#x3D; None
+    try:
+        context &#x3D; get_hotsearch()
+        print(f&#39;&#123;datetime.datetime.now()&#125; 开始更新热搜数据&#39;)
+        conn,cursor &#x3D; get_conn()
+        sql &#x3D; &#39;insert into hotsearch(dt,content) values(%s,%s)&#39;
+        ts &#x3D; time.strftime(&#39;%Y-%m-%d %X&#39;)
+        for i in context:
+            cursor.execute(sql,(ts,i))
+        conn.commit()
+        print(f&#39;&#123;datetime.datetime.now()&#125; 数据更新完毕&#39;)
+    except:
+        traceback.print_exc()
+    finally:
+        close_conn(conn,cursor)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-git stash show ：显示做了哪些改动，默认show第一个存储,如果要显示其他存贮，后面加stash@&#123;$num&#125;，比如第二个 git stash show stash@&#123;1&#125;
+<h3 id="爬取网易当日疫情数据"><a href="#爬取网易当日疫情数据" class="headerlink" title="爬取网易当日疫情数据"></a>爬取网易当日疫情数据</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">def get_daily():
+    url &#x3D; &#39;https:&#x2F;&#x2F;wp.m.163.com&#x2F;163&#x2F;page&#x2F;news&#x2F;virus_report&#x2F;index.html?_nw_&#x3D;1&amp;_anw_&#x3D;1&#39;
+    option &#x3D; ChromeOptions()
+    option.add_argument(&#39;--headless&#39;)
+    option.add_argument(&#39;--no-sandbox&#39;)
+    browser &#x3D; Chrome(options&#x3D;option)
+    browser.get(url)
+    c &#x3D; browser.find_elements_by_class_name(&#39;number&#39;)
+    daily_data &#x3D; []
+    tm &#x3D; time.strftime(&#39;%Y-%m-%d&#39;)
+    daily_data.append(tm)
+    for i in range(2,6):
+        daily_data.append(c[i].text)
+    return daily_data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-git stash show -p : 显示第一个存储的改动，如果想显示其他存存储，命令：git stash show  stash@&#123;$num&#125;  -p ，比如第二个：git stash show  stash@&#123;1&#125;  -p
+<h3 id="导入数据库-1"><a href="#导入数据库-1" class="headerlink" title="导入数据库"></a>导入数据库</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">import time
+import datetime
+import traceback
+from selenium.webdriver import Chrome,ChromeOptions
+import pymysql
 
-git stash apply :应用某个存储,但不会把存储从存储列表中删除，默认使用第一个存储,即stash@&#123;0&#125;，如果要使用其他个，git stash apply stash@&#123;$num&#125; ， 比如第二个：git stash apply stash@&#123;1&#125; 
 
-git stash pop ：命令恢复之前缓存的工作目录，将缓存堆栈中的对应stash删除，并将对应修改应用到当前的工作目录下,默认为第一个stash,即stash@&#123;0&#125;，如果要应用并删除其他stash，命令：git stash pop stash@&#123;$num&#125; ，比如应用并删除第二个：git stash pop stash@&#123;1&#125;
+def update_daily():
+    cursor &#x3D; None
+    conn &#x3D; None
+    try:
+        context &#x3D; get_daily()
+        print(f&#39;&#123;datetime.datetime.now()&#125; 开始更新当日数据&#39;)
+        conn,cursor &#x3D; get_conn()
+        sql &#x3D; &#39;insert into daily_data(time,now_confirm,confirm,dead,heal) values(%s,%s,%s,%s,%s)&#39;
+        cursor.execute(sql,[context[0],context[1],context[2],context[3],context[4]])
+        conn.commit()
+        print(f&#39;&#123;datetime.datetime.now()&#125; 数据更新完毕&#39;)
+    except:
+        traceback.print_exc()
+    finally:
+        close_conn(conn,cursor)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-git stash drop stash@&#123;$num&#125; ：丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储
 
-git stash clear ：删除所有缓存的stash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>新增的文件，直接执行stash是不会被存储的</strong></p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git cherry-pick &lt;commit&gt;   将指定的提交（commit）应用于当前分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>commit参数，不一定是提交的哈希值，分支名也是可以的，表示转移该分支的最新提交。</p>
-<h2 id="变基"><a href="#变基" class="headerlink" title="变基"></a>变基</h2><p>适用情况:</p>
-<ol>
-<li>有时对于一个简单的需求提交了多次，这样非常不利于code review，所以需要将多次提交合并成一次提交。（即多次commit合并成一次commit）</li>
-<li>当从master创建一个分支开发，然后其他开发者又从master创建新的分支开发并且先提交，导致远程的master分支比本地master分支有很多不同，因此现在要将本地分支代码基于最新的远程master分支来实现提交</li>
-</ol>
-<p><strong>重点:如果提交存在于你的仓库之外，而别人可能基于这些提交进行开发，那么不要执行变基。</strong></p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git">git rebase -i   将本地的多次提交合并为一个，以简化提交历史。本地有多个提交时,如果不进行这一步,在git rebase master时会多次解决冲突(最坏情况下,每一个提交都会相应解决一个冲突)
-
-git rebase master   将master最新的分支同步到本地，这个过程可能需要手动解决冲突(如果进行了上一步的话,只用解决一次冲突)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签时刻的历史版本取出来。所以，标签也是版本库的一个快照。</p>
-<p>Git的标签虽然是版本库的快照，但其实就是指向某个commit的指针（分支可以移动，标签不能移动），所以，创建和删除标签都是瞬间完成的。</p>
-<p>标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。</p>
-<ul>
-<li><p><code>git tag &lt;tagname&gt;</code>用于新建一个标签，默认为<code>HEAD</code>，也可以指定一个commit id；</p>
-</li>
-<li><p><code>git tag -a &lt;tagname&gt; -m &quot;标签说明&quot;</code>可以指定标签信息；</p>
-</li>
-<li><p><code>git tag</code>可以查看所有标签。</p>
-</li>
-<li><p><code>git push origin &lt;tagname&gt;</code>可以推送一个本地标签；</p>
-</li>
-<li><p><code>git push origin --tags</code>可以推送全部未推送过的本地标签；</p>
-</li>
-<li><p><code>git tag -d &lt;tagname&gt;</code>可以删除一个本地标签；</p>
-</li>
-<li><p><code>git push origin :refs/tags/&lt;tagname&gt;</code>可以删除一个远程标签。</p>
-</li>
-</ul>
+<h2 id="详细代码"><a href="#详细代码" class="headerlink" title="详细代码"></a>详细代码</h2><p><img src="https://img-blog.csdnimg.cn/20200818151133936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE1MDQyOA==,size_16,color_FFFFFF,t_70#pic_center"></p>
+<p>详细代码：<a target="_blank" rel="noopener" href="https://github.com/ch1762/cov">https://github.com/ch1762/cov</a></p>
 
             </div>
             <hr/>
@@ -638,7 +791,7 @@ git rebase master   将master最新的分支同步到本地，这个过程可能
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ch1762.top/2020/10/05/GIT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://ch1762.top/2020/10/05/GIT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+                    <a href="https://ch1762.top/2020/05/27/python%E7%96%AB%E6%83%85%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E4%B8%8E%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B1%95%E7%A4%BA/">https://ch1762.top/2020/05/27/python%E7%96%AB%E6%83%85%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E4%B8%8E%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B1%95%E7%A4%BA/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -852,7 +1005,7 @@ git rebase master   将master最新的分支同步到本地，这个过程可能
         repo: 'ch1762.github.io',
         owner: 'ch1762',
         admin: ["ch1762"],
-        id: '2020-10-05T13-22-56',
+        id: '2020-05-27T15-23-48',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -880,31 +1033,31 @@ git rebase master   将master最新的分支同步到本地，这个过程可能
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/05/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2020/09/07/MYSQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="linux学习笔记">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="MYSQL 学习笔记">
                         
-                        <span class="card-title">linux学习笔记</span>
+                        <span class="card-title">MYSQL 学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            linux学习笔记
+                            MySQL 数据库操作
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
@@ -933,31 +1086,31 @@ git rebase master   将master最新的分支同步到本地，这个过程可能
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/27/CPP-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+                <a href="/2020/02/06/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="CPP 排序算法">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="shell学习笔记">
                         
-                        <span class="card-title">CPP 排序算法</span>
+                        <span class="card-title">shell学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CPP手撕九大排序算法
+                            shell学习笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-category">
-                                    排序算法
+                            <a href="/categories/shell/" class="post-category">
+                                    shell
                                 </a>
                             
                             

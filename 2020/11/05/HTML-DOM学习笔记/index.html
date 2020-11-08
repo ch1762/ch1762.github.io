@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python循环外else总结, chの1762">
+    <meta name="keywords" content="HTML DOM学习笔记, chの1762">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python循环外else总结 | chの1762</title>
+    <title>HTML DOM学习笔记 | chの1762</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python循环外else总结</h1>
+                    <h1 class="description center-align post-title">HTML DOM学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/trick/">
-                                <span class="chip bg-color">trick</span>
+                            <a href="/tags/HTML-DOM/">
+                                <span class="chip bg-color">HTML DOM</span>
                             </a>
                         
                     </div>
@@ -442,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/tecnology/" class="post-category">
+                                tecnology
                             </a>
                         
                     </div>
@@ -455,7 +455,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-14
+                    2020-11-05
                 </div>
                 
 
@@ -471,75 +471,197 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python循环内if循环外else"><a href="#python循环内if循环外else" class="headerlink" title="python循环内if循环外else"></a>python循环内if循环外else</h1><blockquote>
-<p>  <strong>循环内if循环外else 必须搭配 break 使用</strong></p>
+                <h1 id="HTML-DOM"><a href="#HTML-DOM" class="headerlink" title="HTML DOM"></a>HTML DOM</h1><p>DOM (Document Object Model) 译为<strong>文档对象模型</strong>，是 HTML 和 XML 文档的编程接口。</p>
+<p>HTML DOM 定义了访问和操作 HTML 文档的标准方法。</p>
+<p>DOM 以树结构表达 HTML 文档。 </p>
+<p>W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。 </p>
+<p>W3C DOM 标准被分为 3 个不同的部分：</p>
+<ul>
+<li><p>核心 DOM - 针对任何结构化文档的标准模型</p>
+</li>
+<li><p>XML DOM - 针对 XML 文档的标准模型</p>
+<p>XML DOM 定义了所有 XML 元素的对象和属性，以及访问它们的<em>方法</em>。</p>
+</li>
+<li><p>HTML DOM - 针对 HTML 文档的标准模型</p>
+<p>HTML DOM 定义了所有 HTML 元素的对象和属性，以及访问它们的<em>方法</em>。</p>
+<p>简而言之，HTML DOM 是关于如何获取、修改、添加或删除 HTML 元素的标准。</p>
+</li>
+</ul>
+<h2 id="HTML-DOM-节点"><a href="#HTML-DOM-节点" class="headerlink" title="HTML DOM 节点"></a>HTML DOM 节点</h2><p>HTML DOM 将 HTML 文档视作树结构。这种结构被称为<strong>节点树</strong>：</p>
+<p><img src="https://www.runoob.com/images/htmltree.gif" alt="DOM HTML tree"></p>
+<p>根据 W3C 的 HTML DOM 标准，HTML 文档中的所有内容都是节点：</p>
+<ul>
+<li><p>整个文档是一个文档节点</p>
+</li>
+<li><p>每个 HTML 元素是元素节点</p>
+</li>
+<li><p>HTML 元素内的文本是文本节点</p>
+</li>
+<li><p>每个 HTML 属性是属性节点</p>
+</li>
+<li><p>注释是注释节点</p>
+</li>
+</ul>
+<pre><code>节点之间关系如下图所示：
+
+![Node tree](https://www.runoob.com/wp-content/uploads/2013/09/dom_navigate.gif)</code></pre>
+<h2 id="HTML-DOM-方法与属性"><a href="#HTML-DOM-方法与属性" class="headerlink" title="HTML DOM 方法与属性"></a>HTML DOM 方法与属性</h2><p>HTML DOM 方法是我们可以在节点（HTML 元素）上执行的动作。</p>
+<p>HTML DOM 属性是我们可以在节点（HTML 元素）设置和修改的值。</p>
+<h3 id="编程接口"><a href="#编程接口" class="headerlink" title="编程接口"></a>编程接口</h3><p>可通过 JavaScript （以及其他编程语言）对 HTML DOM 进行访问。</p>
+<p>所有 HTML 元素被定义为对象，而编程接口则是对象方法和对象属性。</p>
+<p>方法是能够执行的动作（比如添加或修改元素）。</p>
+<p>属性是能够获取或设置的值（比如节点的名称或内容）。</p>
+<h3 id="DOM对象方法"><a href="#DOM对象方法" class="headerlink" title="DOM对象方法"></a>DOM对象方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">getElementById()</td>
+<td align="left">返回带有指定 ID 的元素。</td>
+</tr>
+<tr>
+<td align="left">getElementsByTagName()</td>
+<td align="left">返回包含带有指定标签名称的所有元素的节点列表（集合/节点数组）。</td>
+</tr>
+<tr>
+<td align="left">getElementsByClassName()</td>
+<td align="left">返回包含带有指定类名的所有元素的节点列表。</td>
+</tr>
+<tr>
+<td align="left">appendChild()</td>
+<td align="left">把新的子节点添加到指定节点。</td>
+</tr>
+<tr>
+<td align="left">removeChild()</td>
+<td align="left">删除子节点。</td>
+</tr>
+<tr>
+<td align="left">replaceChild()</td>
+<td align="left">替换子节点。</td>
+</tr>
+<tr>
+<td align="left">insertBefore()</td>
+<td align="left">在指定的子节点前面插入新的子节点。</td>
+</tr>
+<tr>
+<td align="left">createAttribute()</td>
+<td align="left">创建属性节点。</td>
+</tr>
+<tr>
+<td align="left">createElement()</td>
+<td align="left">创建元素节点。</td>
+</tr>
+<tr>
+<td align="left">createTextNode()</td>
+<td align="left">创建文本节点。</td>
+</tr>
+<tr>
+<td align="left">getAttribute()</td>
+<td align="left">返回指定的属性值。</td>
+</tr>
+<tr>
+<td align="left">setAttribute()</td>
+<td align="left">把指定属性设置或修改为指定的值。</td>
+</tr>
+</tbody></table>
+<h3 id="HTML-DOM-常用属性"><a href="#HTML-DOM-常用属性" class="headerlink" title="HTML DOM 常用属性"></a>HTML DOM 常用属性</h3><ul>
+<li>innerHTML - 节点（元素）的文本值</li>
+<li>parentNode - 节点（元素）的父节点</li>
+<li>childNodes - 节点（元素）的子节点</li>
+<li>attributes - 节点（元素）的属性节点</li>
+</ul>
+<h4 id="nodeName"><a href="#nodeName" class="headerlink" title="nodeName"></a>nodeName</h4><p>nodeName 属性规定节点的名称。</p>
+<ul>
+<li>nodeName 是只读的</li>
+<li>元素节点的 nodeName 与标签名相同</li>
+<li>属性节点的 nodeName 与属性名相同</li>
+<li>文本节点的 nodeName 始终是 #text</li>
+<li>文档节点的 nodeName 始终是 #document</li>
+</ul>
+<p><strong>注意：</strong> nodeName 始终包含 HTML 元素的大写字母标签名。</p>
+<h4 id="nodeValue"><a href="#nodeValue" class="headerlink" title="nodeValue"></a>nodeValue</h4><p>nodeValue 属性规定节点的值。</p>
+<ul>
+<li>元素节点的 nodeValue 是 undefined 或 null</li>
+<li>文本节点的 nodeValue 是文本本身</li>
+<li>属性节点的 nodeValue 是属性值</li>
+</ul>
+<h4 id="nodeType"><a href="#nodeType" class="headerlink" title="nodeType"></a>nodeType</h4><p>nodeType 属性返回节点的类型。nodeType 是只读的。</p>
+<p>比较重要的节点类型有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">元素类型</th>
+<th align="left">NodeType</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">元素</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">属性</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">文本</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">注释</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">文档</td>
+<td align="left">9</td>
+</tr>
+</tbody></table>
+<h2 id="HTML-DOM-元素（节点）访问"><a href="#HTML-DOM-元素（节点）访问" class="headerlink" title="HTML DOM 元素（节点）访问"></a>HTML DOM 元素（节点）访问</h2><p>可通过不同的方式来访问 HTML 元素（节点）：</p>
+<ul>
+<li>通过使用 getElementById() 方法</li>
+<li>通过使用 getElementsByTagName() 方法</li>
+<li>通过使用 getElementsByClassName() 方法</li>
+</ul>
+<h3 id="getElementById-方法"><a href="#getElementById-方法" class="headerlink" title="getElementById() 方法"></a>getElementById() 方法</h3><p>getElementById() 方法返回带有指定 ID 的元素引用。</p>
+<blockquote>
+<p>   node.getElementById(“id”);</p>
 </blockquote>
-<p><strong>其含义为：若在循环内所有值都不符合if条件，则只执行else语句。若在循环内有值都符合if条件，则只执行if语句。若不使用break则else语句永远会执行。</strong></p>
-<h2 id="循环内if-else"><a href="#循环内if-else" class="headerlink" title="循环内if else"></a>循环内if else</h2><h4 id="满足条件"><a href="#满足条件" class="headerlink" title="满足条件"></a>满足条件</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">for i in range(5):
-    if i&#x3D;&#x3D;3:
-        print(&#39;我是3&#39;)
-    else:
-        print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">0
-1
-2
-我是3
-4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="不满足条件"><a href="#不满足条件" class="headerlink" title="不满足条件"></a>不满足条件</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">for i in range(5):
-    if i&#x3D;&#x3D;6:
-        print(&#39;我是6&#39;)
-    else:
-        print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">0
-1
-2
-3
-4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="循环内if循环外else"><a href="#循环内if循环外else" class="headerlink" title="循环内if循环外else"></a>循环内if循环外else</h2><h3 id="不包含break"><a href="#不包含break" class="headerlink" title="不包含break"></a>不包含break</h3><h4 id="满足条件-1"><a href="#满足条件-1" class="headerlink" title="满足条件"></a>满足条件</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">for i in range(5):
-    if i&#x3D;&#x3D;3:
-        print(&#39;我是3&#39;)
-else:
-    print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">我是3
-4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h4 id="不满足条件-1"><a href="#不满足条件-1" class="headerlink" title="不满足条件"></a>不满足条件</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">for i in range(5):
-    if i&#x3D;&#x3D;6:
-        print(&#39;我是6&#39;)
-else:
-    print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="包含break"><a href="#包含break" class="headerlink" title="包含break"></a>包含break</h3><h4 id="满足条件-2"><a href="#满足条件-2" class="headerlink" title="满足条件"></a>满足条件</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">for i in range(5):
-    if i&#x3D;&#x3D;3:
-        print(&#39;我是3&#39;)
-        break
-else:
-    print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">我是3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="不满足条件-2"><a href="#不满足条件-2" class="headerlink" title="不满足条件"></a>不满足条件</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">for i in range(5):
-    if i&#x3D;&#x3D;6:
-        print(&#39;我是6&#39;)
-        break
-else:
-    print(i)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h3 id="getElementsByTagName-方法"><a href="#getElementsByTagName-方法" class="headerlink" title="getElementsByTagName() 方法"></a>getElementsByTagName() 方法</h3><p>getElementsByTagName() 返回带有指定标签名的所有元素。</p>
+<blockquote>
+<p>  node.getElementsByTagName(“tagname”);</p>
+</blockquote>
+<h3 id="getElementsByClassName-方法"><a href="#getElementsByClassName-方法" class="headerlink" title="getElementsByClassName() 方法"></a>getElementsByClassName() 方法</h3><p>getElementsByClassName() 返回带有指定类名的所有 HTML 元素。</p>
+<blockquote>
+<p>  node.getElementsByClassName(“classname”);</p>
+</blockquote>
+<h2 id="HTML-DOM-修改内容"><a href="#HTML-DOM-修改内容" class="headerlink" title="HTML DOM - 修改内容"></a>HTML DOM - 修改内容</h2><p>修改 HTML = 改变元素、属性、样式和事件。</p>
+<p>修改 HTML DOM 意味着：</p>
+<ul>
+<li>改变 HTML 内容</li>
+<li>改变 CSS 样式</li>
+<li>改变 HTML 属性</li>
+<li>创建新的 HTML 元素</li>
+<li>删除已有的 HTML 元素</li>
+<li>改变事件（处理程序）</li>
+</ul>
+<p>HTML DOM 同样允许在事件发生时执行代码。当 HTML 元素”有事件发生”时，浏览器就会生成事件：</p>
+<ul>
+<li>在元素上点击</li>
+<li>加载页面</li>
+<li>改变输入字段</li>
+</ul>
+<p>HTML 事件：</p>
+<ul>
+<li>当用户点击鼠标时</li>
+<li>当网页已加载时</li>
+<li>当图片已加载时</li>
+<li>当鼠标移动到元素上时</li>
+<li>当输入字段被改变时</li>
+<li>当 HTML 表单被提交时</li>
+<li>当用户触发按键时 </li>
+</ul>
 
             </div>
             <hr/>
@@ -565,7 +687,7 @@ else:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ch1762.top/2020/10/14/python%E5%BE%AA%E7%8E%AF%E5%A4%96else%E6%80%BB%E7%BB%93/">https://ch1762.top/2020/10/14/python%E5%BE%AA%E7%8E%AF%E5%A4%96else%E6%80%BB%E7%BB%93/</a>
+                    <a href="https://ch1762.top/2020/11/05/HTML-DOM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://ch1762.top/2020/11/05/HTML-DOM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -603,8 +725,8 @@ else:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/trick/">
-                                    <span class="chip bg-color">trick</span>
+                                <a href="/tags/HTML-DOM/">
+                                    <span class="chip bg-color">HTML DOM</span>
                                 </a>
                             
                         </div>
@@ -775,7 +897,7 @@ else:
         repo: 'ch1762.github.io',
         owner: 'ch1762',
         admin: ["ch1762"],
-        id: '2020-10-14T21-29-33',
+        id: '2020-11-05T21-22-08',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -803,6 +925,55 @@ else:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2020/11/08/XML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="XML学习笔记">
+                        
+                        <span class="card-title">XML学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            XML学习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/tecnology/" class="post-category">
+                                    tecnology
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/XML/">
+                        <span class="chip bg-color">XML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/11/01/CTF-WEB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
@@ -819,9 +990,9 @@ else:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -839,55 +1010,6 @@ else:
                     
                     <a href="/tags/CTF-WEB/">
                         <span class="chip bg-color">CTF-WEB</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/10/14/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="html学习笔记">
-                        
-                        <span class="card-title">html学习笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            html学习笔记
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/web/" class="post-category">
-                                    web
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/html/">
-                        <span class="chip bg-color">html</span>
                     </a>
                     
                 </div>

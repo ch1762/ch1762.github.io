@@ -1,0 +1,1969 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="CTF-WEB学习笔记, ch1762のblog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>CTF-WEB学习笔记 | ch1762のblog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">ch1762のblog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">ch1762のblog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ch1762" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>ch1762のgithub
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ch1762" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="ch1762のgithub" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">CTF-WEB学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/CTF-WEB/">
+                                <span class="chip bg-color">CTF-WEB</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/tecnology/" class="post-category">
+                                tecnology
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-11-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="ctf-web"><a href="#ctf-web" class="headerlink" title="ctf-web"></a>ctf-web</h1><ul>
+<li>信息搜集</li>
+<li>认证绕过</li>
+<li>SQL注入</li>
+<li>文件上传</li>
+<li>文件包含</li>
+<li>PHP代码审计</li>
+</ul>
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><ul>
+<li><p>源码泄露</p>
+<ul>
+<li><p>页面源代码</p>
+<p><img src="https://i.loli.net/2020/11/02/jwRIaT58XhHULm4.png" alt="image-20201102181326065"></p>
+</li>
+<li><p>敏感文件泄漏</p>
+<ul>
+<li>备份文件(.swp/.bak/.beifen/~/phps等)</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/02/kUboAxLhtRvD85z.png" alt="image-20201102181350922"></p>
+<ul>
+<li>数据库(mdb)</li>
+<li>压缩包(zip/tar.gz//DS_Store/WEB-INF/web.xml/cvs/Bazaar/bzr)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>robots.txt泄漏</p>
+<p><img src="https://i.loli.net/2020/11/02/QgptFqOxmeL5Szl.png" alt="image-20201102181430319"></p>
+</li>
+<li><p>404页面泄漏</p>
+</li>
+<li><p>协议头泄漏</p>
+</li>
+<li><p>HTTP请求与响应头</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/02/dMPgqGHOknzDaW9.png" alt="image-20201102181413918"></p>
+<ul>
+<li>JS代码隐藏</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/02/1aPkZv6HCdLKNXn.png" alt="image-20201102181503722"></p>
+<ul>
+<li>GIT泄漏</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/02/otpkwcUILCgh6ay.png" alt="image-20201102181517254"></p>
+<h2 id="认证绕过"><a href="#认证绕过" class="headerlink" title="认证绕过"></a>认证绕过</h2><h3 id="HTTP协议基础"><a href="#HTTP协议基础" class="headerlink" title="HTTP协议基础"></a>HTTP协议基础</h3><ul>
+<li><p>HTTP请求(Requests)</p>
+<p>一个HTTP请求包含三个部分：</p>
+<ul>
+<li>方法，URL，协议/版本(Method-URI-Protocol/Version)</li>
+<li>请求包头(Requests headers)</li>
+<li>实体包(Entity body)</li>
+</ul>
+</li>
+<li><p>HTTP响应(Responses)</p>
+<p>一个HTTP响应也包含三个部分：</p>
+<ul>
+<li>协议状态代码描述(Protocol-Status code-Description)</li>
+<li>响应包头(Response headers)</li>
+<li>实体包(Entity body)</li>
+</ul>
+</li>
+</ul>
+<h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p>HTTP请求由请求行、消息报头、请求正文三个部分组成。</p>
+<ul>
+<li>方法，URL，协议/版本(Method-URI-Protocol/Version)</li>
+<li>消息报头(Request headers)</li>
+<li>请求正文（Entity body）</li>
+</ul>
+<h3 id="HTTP请求方法"><a href="#HTTP请求方法" class="headerlink" title="HTTP请求方法"></a>HTTP请求方法</h3><table>
+<thead>
+<tr>
+<th>DELETE</th>
+<th>DELETE方法用于请求资源服务区删除指定的资源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TRACE</td>
+<td>TRACE方法一般用于激发一个远程应用层的请求消息回路</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>为了能动态的切换到隧道的代理</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>OPTIONS方法用于请求获取URI标识的资源在请求\响应的通信过程中可以使用的功能选项</td>
+</tr>
+</tbody></table>
+<h3 id="HTTP请求首部"><a href="#HTTP请求首部" class="headerlink" title="HTTP请求首部"></a>HTTP请求首部</h3><ul>
+<li>Host:主要用于指定被请求支援的Internet主机和端口号</li>
+<li>User-Agent:向服务端传递客户端操作系统、浏览器、和其他属性</li>
+<li>Referer:包含一个URL，代表当前URL的上一个URL</li>
+<li>Cookie:是一段文本，通常来表示请求者的身份</li>
+<li>Range:Range可以请求实体部分内容，多线程下载一定会用到此请求头 </li>
+<li>x-forward-for:即XFF头，代表请求端的IP，也可以是多个，中间用逗号隔开 </li>
+<li>Accept:用于指定客户端接收哪些MIME类型的信息 </li>
+<li>Accept-Charset:用于指定客户端接收的字符集 </li>
+<li>信息：就是实体内容的属性，包括实体信息类型，长度，压缩方法，最后一次修改时间等 </li>
+<li>Content-Type:用于向接收方指示实体的介质类型 </li>
+<li>Content-Encoding:被用作媒体类型的修饰符，表示了已经被用到实体正文的附加内容编 码，想要获得content-type报头域中所引用的媒体类型，必须采用相应的解码机制 </li>
+<li>Content-Length:用于指明实体正文的长度，以字节方式存储的十进制数字来表示 </li>
+<li>Last-Modified:用于指示资源的最好修改时间和日期</li>
+</ul>
+<h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p>HTTP 响应（Responses) 也包含三个部分:状态行、 消息报头、响应正文</p>
+<ul>
+<li><p>状态行：协议状态代码描叙（Protocol-Status codeDescription）</p>
+</li>
+<li><p>消息报头（Response headers）</p>
+</li>
+<li><p>响应正文（Entity body）</p>
+</li>
+</ul>
+<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><ul>
+<li><p>状态行：HTTP-Version Status-Code Reason-Phrase </p>
+<ul>
+<li><p>HTTP-Version表示服务器HTTP协议的版本； </p>
+</li>
+<li><p>Status-Code表示服务器发回的响应状态代码 </p>
+</li>
+<li><p>Reason-Phrase表示状态代码的文本描述。 </p>
+</li>
+</ul>
+</li>
+<li><p>状态代码有三位数字组成，第一个数字定义了响应的类别，且有五种可能取值： </p>
+<ul>
+<li><p>1xx：指示信息–表示请求已接收，继续处理，范围是100~101 </p>
+</li>
+<li><p>2xx：成功–表示请求已被成功接收、理解、接受，范围是200~206 </p>
+</li>
+<li><p>3xx：重定向–要完成请求必须进行更进一步的操作，范围是300~305 </p>
+</li>
+<li><p>4xx：客户端错误–请求有语法错误或请求无法实现，范围是400~415 </p>
+</li>
+<li><p>5xx：服务器端错误–服务器未能实现合法的请求，范围是500~505 </p>
+</li>
+</ul>
+</li>
+<li><p>2、响应报头 </p>
+</li>
+<li><p>3、响应正文就是服务器返回的资源的内容</p>
+</li>
+</ul>
+<h3 id="HTTP常见响应状态码"><a href="#HTTP常见响应状态码" class="headerlink" title="HTTP常见响应状态码"></a>HTTP常见响应状态码</h3><ul>
+<li><p>200：客户端请求成功 </p>
+</li>
+<li><p>302：重定向 </p>
+</li>
+<li><p>404：请求的资源不存在 </p>
+</li>
+<li><p>400：客户端请求有语法错误，不能被服务器所理解 </p>
+</li>
+<li><p>401：请求未授权 </p>
+</li>
+<li><p>403：服务器收到请求，但是拒绝提供服务 </p>
+</li>
+<li><p>500：服务器内部错误 </p>
+</li>
+<li><p>503：服务器当前不能处理客户端的请求，一段时间 后可能恢复正常</p>
+</li>
+</ul>
+<h3 id="HTTP响应首部"><a href="#HTTP响应首部" class="headerlink" title="HTTP响应首部"></a>HTTP响应首部</h3><ul>
+<li>服务器根据客户端发送的请求返回的内容</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/02/PcvSMoZnOUAL9em.png" alt="image-20201102185002233"></p>
+<ul>
+<li>Server:服务器所使用的Web服务器名称</li>
+<li>Set-Cookie:向客户端设置Cookie</li>
+<li>Last-Modified:服务器通过这个头信息告诉浏览器， 资源的最后修改时间</li>
+<li>Location:告诉浏览器去访问那个页面，浏览器接收 到这个请求后会立刻访问Location头所指向的页面</li>
+<li>Refresh:服务器通过Refresh头告诉浏览器定时刷新浏览器</li>
+</ul>
+<h3 id="常用认证绕过方法"><a href="#常用认证绕过方法" class="headerlink" title="常用认证绕过方法"></a>常用认证绕过方法</h3><ul>
+<li>修改get参数</li>
+<li>修改post参数</li>
+<li>修改cookie参数</li>
+<li>等等</li>
+</ul>
+<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><h3 id="sql注入原理"><a href="#sql注入原理" class="headerlink" title="sql注入原理"></a>sql注入原理</h3><p>SQL注入可描述为通过在用户可控参数中注入 SQL语法，从而破坏原有的SQL结构，达成攻击行为。</p>
+<p>其原因可归纳如下：</p>
+<ul>
+<li>程序编写者在处理程序和数据库交互时，使用字符串拼接的方式构造SQL语句</li>
+<li>未对用户可控参数进行足够的过滤便将参数内容拼接进入 到SQL语句中</li>
+</ul>
+<h3 id="SQL注入类型分类"><a href="#SQL注入类型分类" class="headerlink" title="SQL注入类型分类"></a>SQL注入类型分类</h3><ul>
+<li>整型注入</li>
+</ul>
+<blockquote>
+<p>  select * from user where id = 1</p>
+</blockquote>
+<ul>
+<li>字符串类型注入</li>
+</ul>
+<blockquote>
+<p>  select * from user where name = ‘admin’</p>
+</blockquote>
+<h3 id="常见sql注入位置"><a href="#常见sql注入位置" class="headerlink" title="常见sql注入位置"></a>常见sql注入位置</h3><ul>
+<li>GET方式注入</li>
+</ul>
+<p>url中进行sql语句注入</p>
+<ul>
+<li>POST方式注入</li>
+</ul>
+<p>表单、登录框中进行sql语句注入</p>
+<ul>
+<li>HTTP头部注入</li>
+</ul>
+<p>http请求头中进行注入（ X-Forwared-For / HOST 等）</p>
+<ul>
+<li>Cookie注入</li>
+</ul>
+<p>利用cookie字段注入</p>
+<h3 id="常见注入手法"><a href="#常见注入手法" class="headerlink" title="常见注入手法"></a>常见注入手法</h3><ul>
+<li>UNION query SQL injection（联合查询注入）</li>
+<li>Error-based SQL injection（报错型注入）</li>
+<li>Boolean-based blind SQL injection（布尔型注入）</li>
+<li>Time-based blind SQL injection（基于时间延迟注入）</li>
+</ul>
+<h4 id="联合查询注入"><a href="#联合查询注入" class="headerlink" title="联合查询注入"></a>联合查询注入</h4><p>UNION 必须由两条或两条以上的SELECT 语句组成， 语句之间用关键字UNION 分隔 </p>
+<p>UNION 中的每个查询必须包含相同的列 </p>
+<p>UNION 会从查询结果中自动去除重复行</p>
+<p>利用前提:  页面上有显示位</p>
+<p>优点:  方便、快捷、易于利用</p>
+<p>缺点:  需要显示位</p>
+<h4 id="报错注入"><a href="#报错注入" class="headerlink" title="报错注入"></a>报错注入</h4><p>SQL报错注入就是利用数据库的某些机制，人为地制造错误条件，使得查询结果能够出现在错误信息中。</p>
+<p>MYSQL报错注入大体可以分为以下几类：</p>
+<ul>
+<li><p>BIGINT等数据类型溢出</p>
+</li>
+<li><p>Xpath语法错误</p>
+</li>
+<li><p>concat+rand()+group_by()导致主键重复</p>
+</li>
+<li><p>数据库的一些特性</p>
+</li>
+</ul>
+<p>注意，在使用报错语句时，有两种使用方法，一种是AND连接， 报错语句不需要写SELECT；另一种是UNION，报错语句需要写SELECT，同时还要注意列数量要对应，推荐使用AND连接。</p>
+<p>常用报错注入方式</p>
+<ul>
+<li>利用 double 数值类型超出范围进行报错注入</li>
+</ul>
+<blockquote>
+<p>  union select (exp(~(select * from(select user())a))),2,3 –+</p>
+</blockquote>
+<ul>
+<li>利用 bigint 溢出进行报错注入</li>
+</ul>
+<blockquote>
+<p>  union select(!(select * from (select user())x) - ~0)</p>
+</blockquote>
+<ul>
+<li>xpath 函数报错注入</li>
+</ul>
+<blockquote>
+<p>  extractvalue(1,concat(0x7e,(select @@version),0x7e))–+</p>
+<p>  updatexml(1,concat(0x7e,(select @@version),0x7e),1)–+</p>
+</blockquote>
+<ul>
+<li>利用数据的重复性</li>
+</ul>
+<blockquote>
+<p>  union select 1,2,3 from (select name_const(version(),1),name_const(version(),1))x –+</p>
+</blockquote>
+<h4 id="布尔盲注"><a href="#布尔盲注" class="headerlink" title="布尔盲注"></a>布尔盲注</h4><ul>
+<li>判断是否存在注入，注入是字符型还是数字型</li>
+</ul>
+<p>例：1 or 1=1，1’ or ‘1’=‘1</p>
+<ul>
+<li>猜解当前数据库名</li>
+</ul>
+<p>例：猜长度 and length(database())=1 #</p>
+<p>​      逐个猜字符and ascii(substr(databse(),1,1))&gt;97#</p>
+<ul>
+<li>猜解数据库中的表名</li>
+</ul>
+<p>例：猜表数量 and (select count (table_name) from information_schema.tables where table_schema=database())=1 #</p>
+<p> 逐个猜表名长度and length(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1))=1 #</p>
+<p>再逐个猜表名字符 and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))&gt;97 # </p>
+<ul>
+<li><p>猜解表中的字段名， </p>
+<p>例：猜字段数量and (select count(column_name) from information_schema.columns where table_name= ’users’)=1 #， </p>
+<p>​        逐个猜字段长度and length(substr((select column_name from information_schema.columns where table_name= ’users’ limit 0,1),1))=1 #，</p>
+<p>​        再逐个猜字段字符（可用二分法） </p>
+</li>
+<li><p>猜解数据，先猜数据记录数（可用二分法），再逐个字段猜数据的长度及数据（可用二分法）</p>
+</li>
+</ul>
+<h4 id="延时注入"><a href="#延时注入" class="headerlink" title="延时注入"></a>延时注入</h4><ul>
+<li><p>1.判断是否存在注入，注入是字符型还是数字型，</p>
+<p>例：and sleep(5) # </p>
+</li>
+<li><p>2.猜解当前数据库名</p>
+<p>例：猜长度 and if(length(database())=1,sleep(5),1) # </p>
+<p>​       逐个猜字符 and if(ascii(substr(database(),1,1))&gt;97,sleep(5),1) </p>
+</li>
+<li><p>3.猜解数据库中的表名</p>
+<p>例：猜表数量 and if((select count(table_name) from information_schema.tables where table_schema=database() )=1,sleep(5),1)# </p>
+<p>​       逐个猜表名长度 and if(length(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1))=1,sleep(5),1)</p>
+<p>​       再逐个猜表名字符</p>
+</li>
+<li><p>4.猜解表中的字段名 </p>
+<p>例：猜字段数量 and if((select count(column_name) from information_schema.columns where table_name= ’users’)=1,sleep(5),1)# </p>
+<p>​       逐个猜字段长度 and if(length(substr((select column_name from information_schema.columns where table_name= ’users’ limit 0,1),1))=1,sleep(5),1) # </p>
+<pre><code>   再逐个猜字段字符（可用二分法） </code></pre>
+</li>
+<li><p>5.猜解数据，先猜数据记录数（可用二分法），再逐个字段猜数据的长度及数据（可用二分法）</p>
+</li>
+</ul>
+<h3 id="sqlmap注入工具"><a href="#sqlmap注入工具" class="headerlink" title="sqlmap注入工具"></a>sqlmap注入工具</h3><h4 id="检测注入"><a href="#检测注入" class="headerlink" title="检测注入"></a>检测注入</h4><ul>
+<li>get型：?id=1</li>
+</ul>
+<blockquote>
+<p>  python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://xxxxxxxx/index.php?id=1%E2%80%9D">http://xxxxxxxx/index.php?id=1”</a> </p>
+</blockquote>
+<ul>
+<li>post型：-r / –date / –forms</li>
+</ul>
+<p>BP抓包，将请求报文sent to file—-aa.txt文件中</p>
+<blockquote>
+<p>  python sqlmap.py -r“路径/aa.txt” </p>
+</blockquote>
+<ul>
+<li>cookie型：–cookie</li>
+</ul>
+<blockquote>
+<p>  python sqlmap.py –u “<a target="_blank" rel="noopener" href="http://xxxxxxxx/index.php%E2%80%9D">http://xxxxxxxx/index.php”</a> –cookie “     0id=1–level 共有 五个等级”–level 2</p>
+<p>  Level&gt;=2时测试HTTP Cookie </p>
+<p>  Level&gt;=3时测试HTTP User-Agent  </p>
+<p>  Level=5时测试HTTP Host</p>
+</blockquote>
+<h4 id="Sqlmap-access注入"><a href="#Sqlmap-access注入" class="headerlink" title="Sqlmap access注入"></a>Sqlmap access注入</h4><ul>
+<li>检测注入点</li>
+</ul>
+<blockquote>
+<p>  sqlmap.py -u “url”</p>
+<p>  “-u”选项用于指定URL</p>
+</blockquote>
+<ul>
+<li>猜解表名</li>
+</ul>
+<blockquote>
+<p>  sqlmap.py -u “url” –tables</p>
+<p>  –tables”选项用于指定猜解数据库中包含哪些表</p>
+</blockquote>
+<ul>
+<li>猜解字段名</li>
+</ul>
+<blockquote>
+<p>  sqlmap.py -u “url” –columns -T “manage_user“</p>
+<p>  “-T”选项，指定对哪个表进行猜解</p>
+<p>  “–columns”选项，告诉sqlmap这次的任务是猜解字段名</p>
+</blockquote>
+<ul>
+<li>爆出字段内容</li>
+</ul>
+<blockquote>
+<p>   sqlmap.py -u “url” –dump -C “username,password” -T “manage_user“</p>
+<p>   选项“–dump”连同选项“-C”一起使用，意为猜解指定字段中的内容</p>
+</blockquote>
+<h4 id="注入流程"><a href="#注入流程" class="headerlink" title="注入流程"></a>注入流程</h4><ul>
+<li>sqlmap.py -u “url” –tables -D “govcn “ </li>
+<li>爆出指定数据库的所有表 </li>
+<li>sqlmap.py -u “url” –columns -T “admin” - D “govcn “ </li>
+<li>爆出指定表的列项  </li>
+<li>sqlmap.py -u “url” -T “admin” -D “govcn “ </li>
+<li>输出指定数据库指定表的指定列的记录</li>
+</ul>
+<h3 id="MYSQL导出一句话"><a href="#MYSQL导出一句话" class="headerlink" title="MYSQL导出一句话"></a>MYSQL导出一句话</h3><ul>
+<li><p>into outfile ‘path’</p>
+<ul>
+<li>权限足够，一般是root</li>
+<li>爆web绝对路径</li>
+<li>GPC魔法开关未开启</li>
+</ul>
+</li>
+<li><p>load_file()读取敏感信息</p>
+<ul>
+<li>必须有权限读取并且文件必须完全可读</li>
+</ul>
+<p>and (select count(*) from mysql.user)&gt;0 返回正常，说明具有读写权限。 </p>
+<p>and (select count(*) from mysql.user)&gt;0 返回错误，说明不具有读写权限。</p>
+<ul>
+<li>欲读取文件必须在服务器上</li>
+<li>必须指定文件完整的路径</li>
+<li>欲读取文件必须小于 max_allowed_packet</li>
+</ul>
+</li>
+</ul>
+<h3 id="绕WAF、安全狗技巧"><a href="#绕WAF、安全狗技巧" class="headerlink" title="绕WAF、安全狗技巧"></a>绕WAF、安全狗技巧</h3><ul>
+<li><p>WAF过滤机制：</p>
+<ul>
+<li>异常检测协议–拒绝不符合HTTP标准的请求；</li>
+<li>增强的输入验证–代理和服务端的验证而不只是限于客户端验证；</li>
+<li>白名单&amp;黑名单机制–白名单适用于稳定的Web应用，黑名单适合处理已知问题；</li>
+<li>基于规则和基于异常的保护–基于规则更多的依赖黑名单机制基于，基于异常根据系统异常更为灵活；</li>
+<li>另外还有会话保护、Cookies保护、抗入侵规避技术、 响应监视和信息泄露保护等。</li>
+</ul>
+</li>
+<li><p>大小写绕过</p>
+<ul>
+<li>此类绕过不经常使用，原理是基于SQL语句不分大小写，但过滤只过滤了其中一种。</li>
+</ul>
+</li>
+<li><p>替换关键字</p>
+<ul>
+<li>这种情况下大小写转化无法绕过而且正则表达式会替换或删除select、union这些关键字如果只匹配一次就很容易绕过</li>
+<li>SELselectECT 1,2,3,4 </li>
+</ul>
+</li>
+<li><p>空格绕过</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select&#x2F;**&#x2F;*&#x2F;**&#x2F;from&#x2F;**&#x2F;yz;
+select%0a*%0afrom%0ayz; -- %0a是回车
+&#x2F;*!select*&#x2F;&#x2F;*!**&#x2F;&#x2F;*!from*&#x2F;&#x2F;*!yz*&#x2F;;
+select(a)from(yz);
+select(a)from(yz)where(a&#x3D;1);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>URL编码</p>
+<ul>
+<li>有时后台界面会再次URL解码所以这时可以利用二次编码解决问题</li>
+<li>后台语句</li>
+</ul>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">$insert&#x3D;$link-&gt;query(urldecode($_GET[&#39;id&#39;]));
+$row&#x3D;$insert-&gt;fetch_row();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li>绕过：</li>
+</ul>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select * from yz
+select * from %2579%257a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>十六进制绕过（引号绕过）</p>
+<p>在SQL语句的数据区域可以采用十六进制绕过敏感词汇</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select a from yz where b&#x3D;0x32;
+select * from yz where b&#x3D;char(0x32);
+select * from yz where b&#x3D;char(0x67)+char(0x75)+char(0x65)+char(0x73)+char (0x74)
+select column_name from information_schema.tables where table_name&#x3D;&quot;users&quot;
+select column_name from information_schema.tables where table_name&#x3D;0x7573657273<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>逗号绕过</p>
+</li>
+</ul>
+<p>在使用盲注的时候，需要使用到substr(),mid(),limit。 这些子句方法都需要使用到逗号。对于substr()和mid()这 两个方法可以使用from to的方式来解决。</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mid(user() from 1 for 1)
+substr(user() from 1 for 1)
+select substr(user()from -1) from yz ;
+select ascii(substr(user() from 1 for 1)) &lt; 150;
+同时也可以利用替换函数
+select left(database(),2)&gt;&#39;tf&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>比较符(&lt;,&gt;)绕过</li>
+</ul>
+<p>同样是在使用盲注的时候，在使用二分查找的时候需要使用到比较操作符来进行查找。如果无法使用比较操作符， 那么就需要使用greatest，strcmp。</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select * from users where id&#x3D;1 and greatest(ascii(substr(database(),0,1)),64)&#x3D;64
+select strcmp(left(database(),1),0x32);#lpad(&#39;asd&#39;,2,0)
+if(substr(id,1,1)in(0x41),1,3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>注释符绕过</li>
+</ul>
+<p>在注入时的注释符一般为 # – 当两者不能用时就不能闭合引号</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select 1,2,3 from yz where &#39;1&#39;&#x2F;1&#x3D;(1&#x3D;1)&#x2F;&#39;1&#39;&#x3D;&#39;1&#39;
+(1&#x3D;1)中就有了判断位为下面的注入打下基础<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li>宽字节绕过</li>
+</ul>
+<p><code>%df’</code> 会被PHP转义（开启GPC、用addslashes函数，或者icov等），单引号被加上反斜杠<code>/</code>，就变成了 <code>%df/’</code>，其中<code>/</code>的十六进制是 <code>%5C</code> ，那么现在 <code>%df/’</code> = <code>%df%5c%27</code>，如果程序的默认字符集是GBK等宽字节字符集，则MYSQL用GBK的编码时，会认为 <code>%df%5c</code> 是一个宽字符，也就是<code>縗’</code>，也就是说：<code>%df/’</code> = <code>%df%5c%27</code>=<code>縗’</code>，有了单引号就好注入了。</p>
+<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><p>CTF中的文件上传主要是利用常见的上传漏洞获取flag，不同于渗透攻防过程中的上传漏洞，CTF中的上传漏洞大部分都是基于代码方面的限制，对我们上传文件进行合理性检测，需要我们突破上传限制。</p>
+<p>常见的文件上传检测类型：</p>
+<ul>
+<li>前端JS检测</li>
+<li>黑名单检测</li>
+<li>白名单检测</li>
+<li>内容检测</li>
+<li>等等</li>
+</ul>
+<h3 id="客户端绕过"><a href="#客户端绕过" class="headerlink" title="客户端绕过"></a>客户端绕过</h3><p>客户端javascript检测的概念：当客户端选中要上传的文件点击上传的时候，如果没有向 服务端发送任何数据信息，就是对本地文件进行检测是否 是允许上传的文件类型，这种方式称之为客户端本地 javascript检测</p>
+<p>绕过方法为：修改JS代码，添加允许上传类型</p>
+<h3 id="黑名单绕过"><a href="#黑名单绕过" class="headerlink" title="黑名单绕过"></a>黑名单绕过</h3><p>当客户端将文件提交到服务端的时候，服务端根据自己设定的黑名单对客户端提交上来的文件扩展名进行判断，如果上传的文件扩展名是黑名单里面所限制的，则不予上传。</p>
+<p><img src="https://i.loli.net/2020/11/02/RShrULOGMNsvgYm.png" alt="image-20201102205737373"></p>
+<p>CTF中常见黑名单绕过方法：</p>
+<ul>
+<li>特殊可解析后缀</li>
+<li>上传.htaccess文件</li>
+<li>大小写绕过</li>
+<li>点跟空格绕过</li>
+<li>::$DATA绕过</li>
+<li>双后缀绕过</li>
+<li>配合解析漏洞绕过</li>
+</ul>
+<h4 id="特殊可解析后缀"><a href="#特殊可解析后缀" class="headerlink" title="特殊可解析后缀"></a>特殊可解析后缀</h4><p>如果黑名单仅仅是对常见的文件后缀（例如php）进行限制，则可以上传其他特殊可解析的文件后缀进行绕过。(例如php3/php5等等)</p>
+<p><img src="https://i.loli.net/2020/11/02/FNIgcRKdzmH2L3O.png" alt="image-20201102205939012"></p>
+<h4 id="上传-htaccess文件"><a href="#上传-htaccess文件" class="headerlink" title="上传.htaccess文件"></a>上传.htaccess文件</h4><p>通过.htaccess文件，可以实现：网页301重定向、自定义404错误页面、改变文件扩展名、允许/阻止特定的用户或者目录的访问、禁止目录列表、 配置默认文档等功能，还可以重新重新定义解析规则。</p>
+<p>例如:将jpg后缀文件当做php文件解析  </p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FilesMatch</span> <span class="token attr-name">"4.jpg"</span><span class="token punctuation">></span></span>
+SetHandler application/x-httpd-php 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FilesMatch</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>利用上传的.htaccess文件重新定义解析规则</p>
+<p><img src="https://i.loli.net/2020/11/02/DPrFqEIyHowx98a.png" alt="image-20201102210333655"></p>
+<h4 id="大小写绕过"><a href="#大小写绕过" class="headerlink" title="大小写绕过"></a>大小写绕过</h4><p>如果黑名单规则过于简单，仅仅是对我们上传的文 件后缀名字符进行过滤，而没有区分大小，就可以 利用文件后缀大小写绕过（windows下）</p>
+<p><img src="https://i.loli.net/2020/11/02/1Cx7XvpZwm5egPz.png" alt="image-20201102210413827"></p>
+<h4 id="点和空格绕过"><a href="#点和空格绕过" class="headerlink" title="点和空格绕过"></a>点和空格绕过</h4><p>利用windows系统下的特性。当上传文件后缀名后面存在点跟空格时，上传文件在被保存到windows系统下时，后面的点跟空格会默认被去掉，利用这个特点，可以绕过一些黑名单规则。</p>
+<h4 id="DATA绕过"><a href="#DATA绕过" class="headerlink" title="::$DATA绕过"></a>::$DATA绕过</h4><p>php在window系统下时如果文件名+<code>::$DATA</code>会把<code>::$DATA</code>之后的数据当成文件流处理，不会检测后缀名，且保持<code>::$DATA</code>之前的文件名。</p>
+<p><img src="https://i.loli.net/2020/11/02/dZROIBgi7JAnF6c.png" alt="image-20201102210850248"></p>
+<h4 id="双后缀绕过"><a href="#双后缀绕过" class="headerlink" title="双后缀绕过"></a>双后缀绕过</h4><p> 如果存在一些规则，导致删除我们黑名单列表中的字符，这时就可以利用双重后缀绕过。</p>
+<p><img src="https://i.loli.net/2020/11/02/iOFsebfgdnp248W.png" alt="image-20201102211104400"></p>
+<h4 id="解析漏洞"><a href="#解析漏洞" class="headerlink" title="解析漏洞"></a>解析漏洞</h4><p>一些常见的web中间件在解析上传的文件时， 由于设计的缺陷，会产生一些畸形的错误解析，我们可以利用这些解析漏洞来突破上传限制。</p>
+<ul>
+<li><p>IIS6.0错误解析漏洞</p>
+<ul>
+<li>目录解析</li>
+</ul>
+<p>形式：<a target="_blank" rel="noopener" href="http://www.xxx.com/xx.asp/xx.jpg">www.xxx.com/xx.asp/xx.jpg</a></p>
+<p>原理: 服务器默认会把.asp，.asa目录下的文件都解析成asp文件。</p>
+<ul>
+<li>文件解析</li>
+</ul>
+<p>形式：<a target="_blank" rel="noopener" href="http://www.xxx.com/xx.asp;.jpg">www.xxx.com/xx.asp;.jpg</a> </p>
+<p>原理：服务器默认不解析;号后面的内容，因此xx.asp;.jpg便被解析成asp文件了。</p>
+<ul>
+<li>解析文件类型</li>
+</ul>
+<p>IIS6.0 默认的可执行文件除了asp还包含这三种 :</p>
+<p>/test.asa</p>
+<p>/test.cer</p>
+<p>/test.cdx</p>
+</li>
+<li><p>IIS7.0/7.5错误解析漏洞</p>
+</li>
+</ul>
+<p>形式：<a target="_blank" rel="noopener" href="http://www.xxxx.com/UploadFiles/image/1.jpg/1.php">www.xxxx.com/UploadFiles/image/1.jpg/1.php</a></p>
+<p>原理：IIS7.0/7.5的漏洞，都是由于php配置文件中，开启 了cgi.fix_pathinfo,所以当接收到/1.jpg/1.php（不存在）参数时，会将1.jpg当做php文件解析</p>
+<ul>
+<li>Nginx解析漏洞</li>
+</ul>
+<p>与IIS7.5类似</p>
+<ul>
+<li>Apache解析漏洞</li>
+</ul>
+<p>形式：<a target="_blank" rel="noopener" href="http://www.xxxx.xxx.com/test.php.xxxxx">www.xxxx.xxx.com/test.php.xxxxx</a> </p>
+<p>原理：Apache 解析文件的规则是从右到左开始判断解析, 如果后缀名为不可识别文件解析,就再往左判断。</p>
+<h4 id="白名单绕过"><a href="#白名单绕过" class="headerlink" title="白名单绕过"></a>白名单绕过</h4><p>文件上传白名单：当客户端将文件提交到服务端的时候，服务端根据自己设定的白名单对客户端提交上来的文件扩展名进行判断，只允许扩展名为上传白名单内的文件。</p>
+<p>常见白名单列表绕过： </p>
+<ul>
+<li><p>Content-type类型 </p>
+</li>
+<li><p>%00截断、0x00截断 </p>
+</li>
+<li><p>配合解析漏洞绕过</p>
+</li>
+<li><p>等等</p>
+</li>
+</ul>
+<h4 id="Content-type类型绕过"><a href="#Content-type类型绕过" class="headerlink" title="Content-type类型绕过"></a>Content-type类型绕过</h4><p>MIME类型检测的概念：所谓MIME类型检测实际上就是客户端在上传文件到服务端 的时候，服务端对客户端上传的文件的Content-Type类型 进行检测，如果是白名单所允许的，则可以正常上传，否则上传失败。</p>
+<ul>
+<li><p>常见的媒体格式类型如下：</p>
+<ul>
+<li><p>text/html ： HTML格式</p>
+</li>
+<li><p>text/plain ：纯文本格式   </p>
+</li>
+<li><p>text/xml ： XML格式</p>
+</li>
+<li><p>image/gif ：gif图片格式  </p>
+</li>
+<li><p>image/jpeg ：jpg图片格式</p>
+</li>
+<li><p>image/png：png图片格式</p>
+<p>以application开头的媒体格式类型：</p>
+</li>
+<li><p>application/xhtml+xml ：XHTML格式</p>
+</li>
+<li><p>application/xml   ： XML数据格式</p>
+</li>
+<li><p>application/atom+xml ：Atom XML聚合格式  </p>
+</li>
+<li><p>application/json  ： JSON数据格式</p>
+</li>
+<li><p>application/pdf    ：pdf格式 </p>
+</li>
+<li><p>application/msword ： Word文档格式</p>
+</li>
+<li><p>application/octet-stream ： 二进制流数据（如常见的文件下载）</p>
+</li>
+<li><p>application/x-www-form-urlencoded ： <form encType="">中默认的encType，form表单数据被编码为key/value格式发送到服务器（表单默认的提交数据的格式）</p>
+<p>另外一种常见的媒体格式是上传文件之时使用的：</p>
+</li>
+<li><p>multipart/form-data ： 需要在表单中进行文件上传时，就需要使用该格式</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>绕过方法：抓包修改content-type类型</p>
+<p><img src="https://i.loli.net/2020/11/02/slu4aVZtXiAOHbq.png" alt="image-20201102212101401"></p>
+<h4 id="截断上传绕过"><a href="#截断上传绕过" class="headerlink" title="截断上传绕过"></a>截断上传绕过</h4><p>截断的核心在于chr()这个函数，这个函数表示返回以数值表达式值为编码的字符，举个例子，<code>print chr （78）</code> 结果是<code>N</code>，所以<code>chr(0)</code> 表示的ascii字符是 <code>null</code>，当程序输出包含<code>chr(0)</code>变量时，<code>chr(0)</code>后面的数据会被截断，后面的数据直接忽略，导致漏洞产生。</p>
+<p><code>%00</code>与<code>0x00</code>两者原理都一样，都是ascii为0的字符，只是形式不同而已。</p>
+<p>![image-20201102212257126](<a target="_blank" rel="noopener" href="https://i.loli.net/2020/11/02/jRfy3hmV4baQoBw.png">https://i.loli.net/2020/11/02/jRfy3hmV4baQoBw.png</a></p>
+<p><img src="https://i.loli.net/2020/11/02/4Gi1X2TVAnJjqwP.png" alt="image-20201102212312176"></p>
+<p><img src="https://i.loli.net/2020/11/02/IVtdoglWnecP6XA.png" alt="image-20201102212339096"></p>
+<h4 id="条件竞争"><a href="#条件竞争" class="headerlink" title="条件竞争"></a>条件竞争</h4><p>条件竞争漏洞是一种服务器端的漏洞，由于服务器端在处理不同用户的请求时是并发进行的，因此如果并发处理不当或相关操作逻辑顺序设计的不合理时，将会导致此类问题的发生。</p>
+<ul>
+<li>突破上传重命名</li>
+<li>突破上传文件删除</li>
+</ul>
+<h4 id="上传漏洞防御"><a href="#上传漏洞防御" class="headerlink" title="上传漏洞防御"></a>上传漏洞防御</h4><p>常见几种上传漏洞的防御方法:</p>
+<ul>
+<li>检查文件上传路径 ( 避免 0x00 截断、 IIS6.0 文件夹解析漏洞、目录遍历 )</li>
+<li>文件扩展名检测 ( 避免服务器以非图片的文件格式解析文件 )</li>
+<li>文件 MIME验证 ( 比如 GIF 图片 MIME为 image/gif,CSS 文件的 MIME为 text/css 等 )</li>
+<li>文件内容检测 ( 避免图片中插入 webshell)</li>
+<li>图片二次渲染 ( 最变态的上传漏洞防御方式 , 基本上完全避免了文件上传漏洞 )</li>
+<li>文件重命名 ( 如随机字符串或时间戳等方式 , 防止攻击者得到 webshell 的路径 )</li>
+<li>另外值得注意的是, 攻击者上传了webshell之后需要得到webshell 的路径才能通过工具连接 webshell, 所以尽量不要在任何地方 ( 如下载链接等 ) 暴露文件上传后的地址。例如：有些网站的上传点在上传了文件之后不会在网页上或下载链接中暴露文件的相对路径, 但是在服务器返回的数据包里却带有文件上传后的路径。</li>
+</ul>
+<h2 id="文件包含漏洞"><a href="#文件包含漏洞" class="headerlink" title="文件包含漏洞"></a>文件包含漏洞</h2><p>程序开发人员通常会把可重复使用的函数写到单个文件中， 在使用某个函数时，直接调用此文件，无需再次编写，这种调用文件的过程一般被称为包含。程序开发人员都希望代码更加灵活，所以通常会将包含的文件设置为变量，用来进行动态调用，但正是由于这种灵活性，从而导致客户端可以调用任意文件，造成文件包含漏洞。几乎所有的脚本语言都会提供文件包含功能。文件包含漏洞在PHP Web Application中居多，在JSP、ASP、ASP.NET程序中比较少。</p>
+<p>原理： 程序在进行文件包含操作时，由于对要包含的这个文件来源过滤不严（用户可控），导致客户端可以 通过传递参数的形式将恶意文件包含进去，因此造成了文件包含漏洞，造成敏感文件泄露或者恶意代码注入等。</p>
+<h3 id="文件包含函数-amp-文件包含分类"><a href="#文件包含函数-amp-文件包含分类" class="headerlink" title="文件包含函数&amp;文件包含分类"></a>文件包含函数&amp;文件包含分类</h3><ul>
+<li><p>require()</p>
+<p>require 找不到被包含的文件会产生致命错误，并停止脚本。 </p>
+</li>
+<li><p>include() </p>
+<p>找不到被包含的文件时只会产生警告，脚本将继续执行。 </p>
+</li>
+<li><p>require_once() </p>
+<p>与require类似，区别在于如果该文件中的代码已经被包含， 则不会再次包含</p>
+</li>
+<li><p>include_once() </p>
+<p>与include类似，区别在于如果该文件中的代码已经被包含， 则不会再次包含</p>
+</li>
+</ul>
+<p>根据被包含文件位置的不同可以分为两类：</p>
+<ul>
+<li>本地文件包含（LFI）</li>
+</ul>
+<p>被包含文件在服务器本地上</p>
+<ul>
+<li>远程文件包含（RFI）</li>
+</ul>
+<p>被包含的文件在第三方服务器上</p>
+<p>需要php.ini开启allow_url_fopen（默认开启）和 allow_url_include（默认关闭）选项</p>
+<p>文件包含漏洞利用有很多，CTF中常常利用以下几种方式：</p>
+<ul>
+<li>读取敏感文件</li>
+<li>利用php伪协议读取php源码</li>
+<li>配合上传漏洞getshell</li>
+<li>等等</li>
+</ul>
+<h3 id="LFI敏感文件读取"><a href="#LFI敏感文件读取" class="headerlink" title="LFI敏感文件读取"></a>LFI敏感文件读取</h3><ul>
+<li>分析代码</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/02/X1hY8FHquKcwlV4.png" alt="image-20201102213608911"></p>
+<ul>
+<li>查看页面源码，获取信息</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/02/GLBvrpKstQ3PoMV.png" alt="image-20201102213633463"></p>
+<ul>
+<li>进行LFI本地文件包含，获取flag</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/02/gH2ZthyNpaWidRL.png" alt="image-20201102213651869"></p>
+<h3 id="PHP伪协议利用"><a href="#PHP伪协议利用" class="headerlink" title="PHP伪协议利用"></a>PHP伪协议利用</h3><p>常见的php伪协议还有以下多种：</p>
+<ul>
+<li>file:// — 访问本地文件系统  </li>
+<li>http:// — 访问 HTTP(s) 网址 </li>
+<li>ftp:// — 访问 FTP(s) URLs</li>
+<li>php:// — 访问各个输入/输出流（I/O streams） </li>
+<li>zlib:// — 压缩流 </li>
+<li>data:// — 数据（RFC 2397）</li>
+<li>glob:// — 查找匹配的文件路径模式 </li>
+<li>phar:// — PHP 归档  </li>
+<li>ssh2:// — Secure Shell 2 </li>
+<li>rar:// — RAR </li>
+<li>ogg:// — 音频流 </li>
+<li>expect:// — 处理交互式的流</li>
+</ul>
+<p>在攻防中常常利用一些php的伪协议进行命令执行或 者包含shell文件，但是在CTF-web中，常常利用 php伪协议来进行源码的读取，然后进行代码审计， 获取解题思路，常用的php伪协议读取源码的方式有 以下几种：</p>
+<ul>
+<li>php://filter</li>
+</ul>
+<p>用法：php://filter/read=convert.base64-encode/resource=[文件路径]</p>
+<ul>
+<li>php://input</li>
+</ul>
+<p>allow_url_include选项必须设置为on，否则无法成功，此时 allow_url_fopen是否开启无关紧要。 </p>
+<p>php://input是用来接收post数据的 </p>
+<p>典型：file_get_contents()函数</p>
+<p><img src="https://i.loli.net/2020/11/02/2CQ3OKhmuW1bE6d.png" alt="image-20201102214251775"></p>
+<ul>
+<li>php://data</li>
+</ul>
+<p>使用data://的时候allow_url_fopen和allow_url_include必须 都设置为on，否则利用就会失败</p>
+<p>用法：data:text/plain，[php攻击代码] data:text/plain;base64,［攻击代码的base64编码］</p>
+<p><img src="https://i.loli.net/2020/11/02/xIcu7R5aoKhEQiG.png" alt="image-20201102214304562"></p>
+<h2 id="PHP代码审计"><a href="#PHP代码审计" class="headerlink" title="PHP代码审计"></a>PHP代码审计</h2><h3 id="md5碰撞"><a href="#md5碰撞" class="headerlink" title="md5碰撞"></a>md5碰撞</h3><p>实例：<img src="https://i.loli.net/2020/11/02/M7xXJAgvBWlV5ab.png" alt="image-20201102215615627"></p>
+<p>原理：PHP在处理哈希字符串时，会利用”!=”或”==”来对哈希值进行比较，它把每一个以”0E”开头的哈希值都解释为0，所以如果两个不同的密码经过哈希以后，其哈希值都是以”0E”开头的，那么PHP将会认为他们相同，都是0。</p>
+<h3 id="php弱类型判断"><a href="#php弱类型判断" class="headerlink" title="php弱类型判断"></a>php弱类型判断</h3><p>实例：<img src="https://i.loli.net/2020/11/02/EJIYnk7RUFNOqil.png" alt="image-20201102215728341"></p>
+<p>利用了php中sha1()函数的漏洞，如果把这两个字段构造为数组， 如：?name[]=a&amp;password[]=b，这样在第一处判断时两数组确实是不同的，但在第二处判断时由于sha1()函数无法处理数组类型，将报错并返回false，if 条件成立，获得flag。Md5（）有同样的漏洞</p>
+<h3 id="Strcmp数组绕过"><a href="#Strcmp数组绕过" class="headerlink" title="Strcmp数组绕过"></a>Strcmp数组绕过</h3><p>实例：<img src="https://i.loli.net/2020/11/02/br7QemJP324VIZU.png" alt="image-20201102220039872"></p>
+<p>Strcmp()是二进制字符比较的安全函数。php5.3.3以后，当比较数组和字符串的时候，返回是0。</p>
+<p><code>===</code>是恒等计算符 同时检查表达式的值与类型</p>
+<p><code>==</code>是比较运算符号 不会检查条件式的表达式的类型</p>
+<h3 id="科学计数法"><a href="#科学计数法" class="headerlink" title="科学计数法"></a>科学计数法</h3><p>实例：<img src="https://i.loli.net/2020/11/02/4wKNMjSO6cTRAbC.png" alt="image-20201102225434018"></p>
+<p>可以使用科学计数法，即<code>1e3=1*10*10*10=1000&gt;999</code></p>
+<h3 id="Ereg-函数"><a href="#Ereg-函数" class="headerlink" title="Ereg()函数"></a>Ereg()函数</h3><p>实例：<img src="https://i.loli.net/2020/11/03/EiuqkHZKUxFGjSN.png" alt="image-20201103091245016"></p>
+<p>可以利用ereg函数的%00截断。必须get输入，post表单不会把它当做截断符号。</p>
+<h3 id="变量覆盖"><a href="#变量覆盖" class="headerlink" title="变量覆盖"></a>变量覆盖</h3><p>extract 可以将$_GET数组的值转为变量，默认是如果有冲突，则覆盖已有的变量。 File_get_contents()可以利用php://input绕过。</p>
+<p>实例：<img src="https://i.loli.net/2020/11/03/LquF1IQrVMyRCHn.png" alt="image-20201103091622873"></p>
+<h3 id="serialize-amp-unserialize"><a href="#serialize-amp-unserialize" class="headerlink" title="serialize() &amp;unserialize()"></a>serialize() &amp;unserialize()</h3><p>serialize() 函数用于序列化对象或数组，并返回一个字符串。</p>
+<p>unserialize() 对单一的已序列化的变量进行操作， 将其转换回PHP的值。</p>
+<p>实例：<img src="https://i.loli.net/2020/11/03/irVO4IbWLco2N1e.png" alt="image-20201103092804359"></p>
+<p>当<code>$v-&gt;secret === $v-&gt;enter</code>的时候，输出flag值， 因为<code>$v-&gt;secret</code>在输入反序列化之后，被重新赋值 了，如果让上述表达式成立？考察的是php中对象的比较，只要不是clone，那么就可以通过地址引用变量 <code>a=&amp;b</code>的形式，所以构造：因为序列化是可以序列化对象的，那么把​<code>$v-&gt;enter</code>赋值成<code>$v-&gt;secret</code>的引用，就解决</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">ch1762</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ch1762.top/2020/11/01/CTF-WEB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://ch1762.top/2020/11/01/CTF-WEB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">ch1762</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/CTF-WEB/">
+                                    <span class="chip bg-color">CTF-WEB</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'be123b0cf1105c508607',
+        clientSecret: '20d271d9e5a669626ae85cae6792c1fa5b887013',
+        repo: 'ch1762.github.io',
+        owner: 'ch1762',
+        admin: ["ch1762"],
+        id: '2020-11-01T21-21-57',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/11/05/HTML-DOM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="HTML DOM学习笔记">
+                        
+                        <span class="card-title">HTML DOM学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HTML DOM学习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/tecnology/" class="post-category">
+                                    tecnology
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML-DOM/">
+                        <span class="chip bg-color">HTML DOM</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/14/python%E5%BE%AA%E7%8E%AF%E5%A4%96else%E6%80%BB%E7%BB%93/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="python循环外else总结">
+                        
+                        <span class="card-title">python循环外else总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            python循环外else总结
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/trick/">
+                        <span class="chip bg-color">trick</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: ch1762のblog<br />'
+            + '文章作者: ch1762<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">ch1762</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "08";
+                    var startDate = "13";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ch1762" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:18530401230@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=386255721" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 386255721" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
